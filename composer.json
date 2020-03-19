@@ -1,0 +1,16 @@
+{
+    "name": "gaylor/projet",
+    "description": "projet",
+    "authors": [
+        {
+            "name": "Gaylor Marditsas",
+            "email": "gaylor273@outlook.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "projet\\" : "./app"
+        }
+    },
+    "require": {}
+}

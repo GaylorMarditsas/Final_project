@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    padding: 0;
+
+;
+}
+h1, p, a{
+    margin: 0;
+    text-decoration: none;
+}
+.lato {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+.center{
+    width: 1200px;
+    margin: 0 auto;
+}
+.navigation{
+    background: #2980b9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #2c3e50, #2980b9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.navigation-center {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation-center a {
+    text-decoration: none;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+.navigation-center a:hover{
+    text-decoration: underline;
+}
+.navigation-center ul {
+    list-style-type: none;
+    display: flex;
+}
+.navigation-center ul li {
+ margin-right: 20px;
+}
+
+.presentation{
+    background-color: #fff;
+    padding: 80px;
+    
+}
+.presentation-container{
+    text-align: center;
+}
+.presentation-container h1 {
+    font-size: 2rem;
+    padding: 10px 0;
+}
+.presentation-container p {
+    padding: 15px 0;
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+.strong{
+    font-weight: bolder;
+}
+.godlist{
+    background: #2980b9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom,#2980b9, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 30px 0;
+}
+.godlist-container{
+    
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: wrap;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    justify-content: space-between;
+}
+.godlist-container figure{
+    padding-bottom: 20px;
+}
+.godlist-container figure img{
+    width: 200px;
+    height: 250px;
+}
+.godlist-container figure figcaption{
+    padding: 10px 0;
+}
+.godlist-container figure a{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: lighter;
+
+}
+.godlist-container figure a:hover{
+    text-decoration: underline;
+
+}
+
+/*page gods*/
+.gods-description{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding-top: 80px;
+    
+}
+.gods {
+    display: flex;
+    width: 48%;
+    
+    
+}
+.gods div p{
+    font-size: 1.1rem;
+    margin-top: 25px;
+    overflow: auto;
+    height: 180px;
+}
+.gods h2{
+    font-weight: 400;
+    font-size: 1.7rem;
+    color: #2980b9;
+    margin-top: 0;
+}
+.gods h2:hover{
+    color: #000;
+}
+.gods-description img{
+    width: 250px;
+    margin-bottom: 100px;
+}
+.gods div{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
