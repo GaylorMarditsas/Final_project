@@ -11,4 +11,17 @@ class FrontManager extends Manager
         
         return $req;
     }
+
+    public function searchFront()
+    {
+        $bdd = $this->dbConnect();
+
+        if (isset($_GET['search']) and !empty($_GET['search'])) {
+            $search = htmlspecialchars($_GET['search']);
+            $req = $bdd->prepare('SELECT * FROM Dieux WHERE name LIKE "%". $search ."%"');
+            $req->execute();
+        
+        return $req;
+        }
+    }
 }

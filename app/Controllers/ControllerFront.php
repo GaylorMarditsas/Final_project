@@ -27,6 +27,9 @@ class ControllerFront
 
         $godsFront = new \projet\models\FrontManager();
         $godsFront->viewFront();
+
+        $searchFront = new \projet\models\FrontManager();
+        $searchFront->searchFront();
         $title = "Dieux";
 
         require 'app/views/layout/head.php';
