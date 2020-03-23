@@ -155,3 +155,9 @@ background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, F
     flex-direction: column;
     margin-left: 50px;
 }
+
+/* Home Admin*/
+
+.table-image{
+    width:100px;
+}

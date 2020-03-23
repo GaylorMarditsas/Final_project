@@ -6,12 +6,24 @@ class ControllerBack
 {
     function homeAdmin()
     {
-        $homeFront = new \projet\models\BackManager();
-        $homeFront->viewBack();
-        $title = "Home";
+        $homeBack = new \projet\models\BackManager();
+        $homeBack->viewBack();
+        $homeBack->read('$id');   
+        $title = "Admin";
 
-        
+        require 'app/views/layout/head.php';
         require 'app/views/back/home.php';
+
+    }
+    function updateAdmin()
+    {
+        $homeBack = new \projet\models\BackManager();
+        $homeBack->viewBack();
+        $homeBack->read('$id');   
+        $title = "Update";
+
+        require 'app/views/layout/head.php';
+        require 'app/views/back/godUpdate.php';
 
     }
 }

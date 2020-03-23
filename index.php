@@ -58,10 +58,21 @@ try{
     $controllerBack = new \projet\Controllers\ControllerBack(); //objet controller
 
     if (isset($_GET['action'])){
-        
+        if($_GET['action'] == 'admin'){
+            $controllerBack->homeAdmin();
+        }
+        else if($_GET['action'] == 'update'){
+            
+            if(isset($_GET['id'])){
+                $controllerBack->updateAdmin();
+            }else{
+                $controllerBack->homeAdmin();
+            }
+            
+        }
 
     } else{
-        $controllerBack->homeAdmin();
+        
         
     }
 
