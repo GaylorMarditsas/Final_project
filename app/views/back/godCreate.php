@@ -1,20 +1,20 @@
-<?php $god = $homeBack->read($_GET['id']);
-    //   $update = $updateBack->update(); 
+<?php 
+$create = $createBack->create(); 
 ?>
 
 <main>
     <form action="" method="post">
         <div>
             <label for="name">Nom :</label>
-            <input type="text" name="name" value="<?= $god['name']?>">
+            <input type="text" name="name">
         </div>
         <div>
             <label for="description">Description :</label>
-            <textarea name="description" id="" cols="30" rows="10"><?= $god['description']?></textarea>
+            <textarea name="description" id="" cols="30" rows="10"></textarea>
         </div>
         <div>
             <label for="content">Contenu :</label>
-            <textarea name="content" id="" cols="30" rows="10"><?= $god['content']?></textarea>
+            <textarea name="content" id="" cols="30" rows="10"></textarea>
         </div>
         <div>
             <label for="image">Image :</label>
@@ -25,5 +25,4 @@
         </div>
 
     </form>
-    <img src="<?= $god['image']?>" alt="<?= $god['name'] ?>">
 </main>

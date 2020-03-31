@@ -1,6 +1,7 @@
 <?php
 $gods = $homeBack->viewBack();
 $user = $homeBack->read('$id');
+session_start();
 ?>
 
 
@@ -8,6 +9,7 @@ $user = $homeBack->read('$id');
     
     <section class="godlist">
         <div class="godlist-container center">
+        <a href="index.php?action=create">Ajouter</a>
             <table>
                 <tr>
                     <td>&nbsp;</td>

@@ -1,0 +1,4 @@
+Authname "Espace administration"
+Authtype Basic
+AuthUserFile "C:\xampp\htdocs\sites\projet\app\views\back\.htpasswd"
+Require valid-user
