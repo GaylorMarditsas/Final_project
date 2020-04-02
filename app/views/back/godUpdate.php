@@ -1,4 +1,5 @@
-<?php $god = $homeBack->read($_GET['id']);
+<?php
+$god = $homeBack->read($_GET['id']);
     //   $update = $updateBack->update(); 
 ?>
 

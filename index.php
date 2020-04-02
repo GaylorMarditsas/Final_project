@@ -1,30 +1,4 @@
 <?php
-// //generate constante to the way of index.php
-// define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
-
-// // separate parameters
-// $params = explode('/', $_GET['p']);
-// if($params[0] != ""){
-//     $controller = ucfirst($params[0]);
-    
-//     $action = isset($params[1]) ? $params[1] : 'index';
-
-//     require_once(ROOT. 'Controllers/'.$controller.'.php');
-
-//     $controller = new $controller();
-
-//     $controller->$action();
-
-//     if(method_exists($controller, $action)){
-//         $controller->$action();
-//     }else{
-//         html_response_code(404);
-//         echo 'la page est pas la';
-//     }
-
-// }else{
-    
-// }
 
 session_start();
 

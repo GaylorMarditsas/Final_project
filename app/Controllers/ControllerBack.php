@@ -51,4 +51,13 @@ class ControllerBack
         require 'app/views/back/godCreate.php';
 
     }
+    function deleteAdmin()
+    {
+
+        $createBack = new \projet\models\BackManager();
+        $createBack->delete(); 
+
+        require 'app/views/back/godDelete.php';
+
+    }
 }

@@ -11,45 +11,51 @@ class BackManager extends Manager
         return $req;
     }
 
+    //for login as admin 
     function login(){
-        extract ($_POST);
+
+        if (isset($_POST) && !empty($_POST)) {
+
+            extract($_POST);
     
-    $error = 'Ces identifiants ne correspondent pas !';
-    $bdd = $this->dbConnect();
-    $login = $bdd ->prepare('SELECT id, password FROM user WHERE pseudo = ?');
-    $login->execute([$pseudo]);
-    $login = $login ->fetch();
-    if(password_verify($password, $login['password'])){
-        $_SESSION['user'] = $login['id'];
-        header('Location: index.php');
-    }else{
-        return $error;
-    }
+            $error = 'Ces identifiants ne correspondent pas !';
+            $bdd = $this->dbConnect();
+            $login = $bdd ->prepare('SELECT id, password FROM user WHERE pseudo = ?');
+            $login->execute([$pseudo]);
+            $login = $login ->fetch();
+
+            if (password_verify($password, $login['password']) == true) {
+                $_SESSION['admin'] = $login['id'];
+                header('Location: indexBack.php?action=admin');
+            } else {
+                return $error;
+            }
+        }
     }
 
 
 
     function create()
     {
-        if(isset($_POST['submit'])){
-             if(isset($_POST['name'])) {
-             }
-            // && isset($_POST['description']) 
-            // && isset($_POST['contenu']) 
-            // && isset($_POST['image']))
-            // {
-            //     if(!empty($_POST['name']) 
-            //     && !empty($_POST['description']) 
-            //     && !empty($_POST['contenu'])){
+    
+        if(isset($_POST)){
+            if(isset($_POST['name']) 
+            && isset($_POST['description']) 
+            && isset($_POST['content']) 
+            && isset($_POST['image']))
+            {
 
-            //         echo $name= $_POST['name'];
-            //         echo $description= $_POST['description'];
-            //         echo $contenu= $_POST['contenu'];
-                    
-            //     }else{
-            //         echo "<script>alert('empty');</script>";
-            //     }
-            // }
+            $name=$_POST['name'];
+            $description=$_POST['description'];
+            $content=$_POST['content'];
+            $image=$_POST['image'];
+
+                $bdd = $this->dbConnect();
+                $req = $bdd->prepare("INSERT INTO `dieux` (`id`, `name`, `description`, `content`, `image`) VALUES (NULL, :name, :description, :content, :image)");
+                
+                if($req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image]))
+                header("Location: indexBack.php?action=admin");
+            }
             
         }
     }
@@ -66,44 +72,41 @@ class BackManager extends Manager
     }
 
     function update(){
-        if(isset($_POST['submit'])){
+
+        
+
+        if(isset($_POST)){
             if(isset($_POST['name']) 
             && isset($_POST['description']) 
-            && isset($_POST['contenu']) 
+            && isset($_POST['content']) 
             && isset($_POST['image']))
             {
-                if(!empty($_POST['name']) 
-                && !empty($_POST['description']) 
-                && !empty($_POST['contenu'])
-                && !empty($_POST['image'])){
+            
+            $id=$_GET['id'];
+            $name=$_POST['name'];
+            $description=$_POST['description'];
+            $content=$_POST['content'];
+            $image="app/public/images/". $_POST['image'];
 
-                    echo $name= $_POST['name'];
-                    echo $description= $_POST['description'];
-                    echo $contenu= $_POST['contenu'];
-                    echo $image= $_POST['image'];
-                }else{
-                    echo "<script>alert('empty');</script>";
-                }
+                $bdd = $this->dbConnect();
+
+                $req = $bdd->prepare("UPDATE `dieux` SET `name` = :name, `description` = :description, `content` = :content, `image` = :image WHERE `dieux`.`id` = :id");
+                
+                if($req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image, ':id'=>$id]))
+                header("Location: indexBack.php?action=admin");
             }
+            
         }
-        // try {
-        //     $bdd = $this->dbConnect();
-        //     $req =  "UPDATE dieux set
-        //             name = '$name',
-        //             description = '$description', 
-        //             content= '$content', 
-        //             image = '$image'
-        //             WHERE id=?";
-        // $req->execute();
-        
-        // return $req;
-        // }
-        // catch(Exeption $e) {
-        //     die('Erreur : ' . $e->getMessage());
-        // }
     }
 
     function delete(){
         
+        $id=$_GET['id'];
+            
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("DELETE FROM `dieux` WHERE `dieux`.`id` = :id");
+                
+            if($req->execute([':id'=>$id]))
+            header("Location: indexBack.php?action=admin");
     }
 }

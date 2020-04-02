@@ -1,7 +1,6 @@
 <?php
 $gods = $homeBack->viewBack();
 $user = $homeBack->read('$id');
-session_start();
 ?>
 
 
@@ -9,7 +8,7 @@ session_start();
     
     <section class="godlist">
         <div class="godlist-container center">
-        <a href="index.php?action=create">Ajouter</a>
+        <a href="indexBack.php?action=create">Ajouter</a>
             <table>
                 <tr>
                     <td>&nbsp;</td>
@@ -23,7 +22,8 @@ session_start();
                     <td><?= $god['id'] ?></td>
                     <td><?= $god['name'] ?></td>
                     <td><img class="table-image" src="<?= $god['image'] ?>" alt="<?= $god['name'] ?>" /></td>
-                    <td><a href="index.php?action=update&id=<?= $god['id'] ?>">Modifier</a></td>
+                    <td><a href="indexBack.php?action=update&id=<?= $god['id'] ?>">Modifier</a></td>
+                    <td><a onclick= "return confirm('Voulez-vous vraiment supprimer cet élément ?')"  href="indexBack.php?action=delete&id=<?= $god['id'] ?>">Supprimer</a></td>
                 </tr>
                 <?php endwhile ?>
             </table>

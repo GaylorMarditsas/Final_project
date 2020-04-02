@@ -1,9 +1,5 @@
-<?php 
-$create = $createBack->create(); 
-?>
-
 <main>
-    <form action="" method="post">
+    <form action="" method="post" name="create">
         <div>
             <label for="name">Nom :</label>
             <input type="text" name="name">
@@ -23,6 +19,6 @@ $create = $createBack->create();
         <div>
             <button type="submit" name="submit">Valider</button>
         </div>
-
     </form>
+    
 </main>
