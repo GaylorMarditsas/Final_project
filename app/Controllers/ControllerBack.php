@@ -11,7 +11,8 @@ class ControllerBack
         $homeBack->read('$id');   
         $title = "Admin";
 
-        require 'app/views/layout/head.php';
+        require 'app/views/back/layout/head.php';
+        require 'app/views/back/layout/header.php';
         require 'app/views/back/home.php';
 
     }
@@ -20,10 +21,22 @@ class ControllerBack
 
         $loginBack = new \projet\models\BackManager();
         $loginBack->login();
+        $title = "Login";
 
+        require 'app/views/back/layout/head.php';
         require 'app/views/back/login.php';
     }
 
+    function logoutAdmin()
+    {
+
+        $createBack = new \projet\models\BackManager();
+        $createBack->logout(); 
+        $title = "Logout";
+
+        require 'app/views/back/logout.php';
+
+    }
     function updateAdmin()
     {
         $homeBack = new \projet\models\BackManager();
@@ -34,7 +47,8 @@ class ControllerBack
         $updateBack = new \projet\models\BackManager();
         $updateBack->update(); 
 
-        require 'app/views/layout/head.php';
+        require 'app/views/back/layout/head.php';
+        require 'app/views/back/layout/header.php';
         require 'app/views/back/godUpdate.php';
 
     }
@@ -47,7 +61,8 @@ class ControllerBack
         $createBack = new \projet\models\BackManager();
         $createBack->create(); 
 
-        require 'app/views/layout/head.php';
+        require 'app/views/back/layout/head.php';
+        require 'app/views/back/layout/header.php';
         require 'app/views/back/godCreate.php';
 
     }

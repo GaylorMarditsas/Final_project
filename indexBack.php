@@ -26,6 +26,9 @@ try{
         else if($_GET['action'] == 'delete'){
             $controllerBack->deleteAdmin();
         }
+        else if($_GET['action'] == 'logout'){
+            $controllerBack->logoutAdmin();
+        }
 
     } else{
         $controllerBack->loginAdmin();
