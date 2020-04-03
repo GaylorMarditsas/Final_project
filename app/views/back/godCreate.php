@@ -1,4 +1,5 @@
 <main>
+    <h1>Créer un Dieu</h1>
     <form action="" method="post" name="create">
         <div>
             <label for="name">Nom :</label>
@@ -20,5 +21,5 @@
             <button type="submit" name="submit">Valider</button>
         </div>
     </form>
-    
+
 </main>

@@ -24,17 +24,24 @@ class BackManager extends Manager
             $login->execute([$pseudo]);
             $login = $login ->fetch();
 
-            if (password_verify($password, $login['password']) == true) {
+            if (password_verify($password, $login['password'])) {
                 $_SESSION['admin'] = $login['id'];
                 header('Location: indexBack.php?action=admin');
-            } else {
-                return $error;
+            } 
+            else if (password_verify($password, $login['password'])){
+                echo $error;
+    
             }
         }
     }
 
+    function logout(){
+        unset($_SESSION['admin']);
+        session_destroy();
+        header('Location: index.php');
+    }
 
-
+    //for create a god
     function create()
     {
     
@@ -60,6 +67,7 @@ class BackManager extends Manager
         }
     }
 
+    //for read a god
     function read($id){
         $bdd = $this->dbConnect();
         $req = $bdd->query("SELECT * FROM dieux WHERE id ='$id'");
@@ -71,6 +79,7 @@ class BackManager extends Manager
         
     }
 
+    //for update a god
     function update(){
 
         
@@ -99,6 +108,7 @@ class BackManager extends Manager
         }
     }
 
+    //for delete a god
     function delete(){
         
         $id=$_GET['id'];

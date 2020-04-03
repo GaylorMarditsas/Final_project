@@ -4,6 +4,7 @@ $god = $homeBack->read($_GET['id']);
 ?>
 
 <main>
+<h1>Modifier un Dieu</h1>
     <form action="" method="post">
         <div>
             <label for="name">Nom :</label>

@@ -10,8 +10,8 @@ class ControllerFront
         $homeFront->viewFront();
         $title = "Home";
 
-        require 'app/views/layout/head.php';
-        require 'app/views/layout/header.php';
+        require 'app/views/front/layout/head.php';
+        require 'app/views/front/layout/header.php';
         require 'app/views/front/home.php';
 
     }
@@ -19,8 +19,8 @@ class ControllerFront
 
         $title = "Contact";
 
-        require 'app/views/layout/head.php';
-        require 'app/views/layout/header.php';
+        require 'app/views/front/layout/head.php';
+        require 'app/views/front/layout/header.php';
         require 'app/views/front/contact.php';
     }
     function godsFront(){
@@ -32,16 +32,16 @@ class ControllerFront
         $searchFront->searchFront();
         $title = "Dieux";
 
-        require 'app/views/layout/head.php';
-        require 'app/views/layout/header.php';
+        require 'app/views/front/layout/head.php';
+        require 'app/views/front/layout/header.php';
         require 'app/views/front/gods.php';
     }
     function galleryFront(){
 
         $title = "Galerie";
 
-        require 'app/views/layout/head.php';
-        require 'app/views/layout/header.php';
+        require 'app/views/front/layout/head.php';
+        require 'app/views/front/layout/header.php';
         require 'app/views/front/gallery.php';
     }
 }

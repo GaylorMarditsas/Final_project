@@ -5,7 +5,7 @@ $user = $homeBack->read('$id');
 
 
 <main>
-    
+<h1>Espace administration</h1>
     <section class="godlist">
         <div class="godlist-container center">
         <a href="indexBack.php?action=create">Ajouter</a>
