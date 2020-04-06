@@ -232,6 +232,49 @@ background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, F
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
+/*Galerie photo*/
+#gallery{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+    
+}
+.gallery-container{
+ width: 28%;
+ height: 50%;
+ margin-top:20px;
+ position: relative;
+}
+.overlay h3{
+    color: #fff;
+    font-weight: 300;
+}
+.image{
+    width: 100%;
+}
+/* hover*/
+.overlay{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(80, 80, 80, 0.75);
+    opacity: 0;
+    
+}
+.gallery-container:hover>.overlay{
+    transition: 0.4s;
+    opacity: 1;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+
 /*Back office*/
 .login{
     background-color: #2c3e50;

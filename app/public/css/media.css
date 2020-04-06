@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    
 }
 
 .navigation-center ul{
@@ -19,6 +20,7 @@ background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, F
     justify-content: center;
     padding: 20px 0;
     margin: 0;
+    z-index: 10;
 }
 .navigation-center ul li{
     
@@ -37,4 +39,11 @@ background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, F
 .form-group{
     width: 70%;
 }
+/* gallery*/
+.gallery-container{
+    width: 48%;
+    
+}
+
+
 }

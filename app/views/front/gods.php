@@ -1,5 +1,7 @@
 
-
+<?php
+    $gods = $godsFront->viewFront();    
+?>
 <main>
     <div class="search-gods lato">
         <form action="FrontManager.php" method="get">
@@ -8,41 +10,16 @@
         </form>
     </div>
     <section class="gods-description lato">
-                                     <!--essai de condition avec bdd mais ne marche pas car les infos sont seulement charger au chargement de la page -->
-                                                                    <!--affiche du dieu avec la recherche -->
-        <?php  
-        if (isset($_GET['search']) and !empty($_GET['search'])) : 
-        $searchbar = $searchFront->searchFront();
-        ?>
 
-        <?php while($searchGods = $searchFront->fetch()) : ?>
-
-        <div class="gods center">
-            <a href="#">
-                <img src="<?= $searchGods['image'] ?>" alt="<?= $searchGods['name'] ?>">
-            </a>
-            <div>
-                <a href="#">
-                    <h2 class="name"><?= $searchGods['name'] ?></h2>
-                </a>
-                <p><?= $searchGods['description'] ?></p>
-            </div>
-        </div>
-
-        <?php
-endwhile;
-else :
-    $gods = $godsFront->viewFront();    
-?>
                                                                             <!--affichage classique-->
         <?php while($god = $gods->fetch()) : ?>
 
         <div class="gods center">
-            <a href="#">
+            <a href="index.php?action=god&id=<?= $god['id'] ?>">
                 <img src="<?= $god['image'] ?>" alt="<?= $god['name'] ?>">
             </a>
             <div>
-                <a href="#">
+                <a href="index.php?action=god&id=<?= $god['id'] ?>">
                     <h2 class="name"><?= $god['name'] ?></h2>
                 </a>
                 <p><?= $god['description'] ?></p>
@@ -51,7 +28,6 @@ else :
 
         <?php
         endwhile;
-    endif;
         ?>
 
     </section>

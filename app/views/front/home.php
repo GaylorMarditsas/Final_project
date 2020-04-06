@@ -20,7 +20,7 @@ Cette particularité de la religion nordique est un exemple intéressant d'inté
         <?php while($god = $gods->fetch()) : ?> 
             <figure>
                 <img src="<?= $god['image'] ?>" alt="<?= $god['name'] ?>" />
-                <figcaption><a href="#"><?= $god['name'] ?></a></figcaption>
+                <figcaption><a href="index.php?action=god&id=<?= $god['id'] ?>"><?= $god['name'] ?></a></figcaption>
             </figure>
             <?php endwhile ?>
         </div>
