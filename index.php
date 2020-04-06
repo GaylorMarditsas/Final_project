@@ -18,6 +18,9 @@ try{
         else if($_GET['action'] == 'gallery'){
             $controllerFront->galleryFront();
         }
+        else if($_GET['action'] == 'god'){
+            $controllerFront->godFront();
+        }
 
     } else{
         $controllerFront->home();

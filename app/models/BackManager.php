@@ -12,7 +12,7 @@ class BackManager extends Manager
     }
 
     //for login as admin 
-    function login(){
+    public function login(){
 
         if (isset($_POST) && !empty($_POST)) {
 
@@ -35,14 +35,14 @@ class BackManager extends Manager
         }
     }
 
-    function logout(){
+    public function logout(){
         unset($_SESSION['admin']);
         session_destroy();
         header('Location: index.php');
     }
 
     //for create a god
-    function create()
+    public function create()
     {
     
         if(isset($_POST)){
@@ -68,7 +68,7 @@ class BackManager extends Manager
     }
 
     //for read a god
-    function read($id){
+    public function read($id){
         $bdd = $this->dbConnect();
         $req = $bdd->query("SELECT * FROM dieux WHERE id ='$id'");
         $req->execute();
@@ -80,7 +80,7 @@ class BackManager extends Manager
     }
 
     //for update a god
-    function update(){
+    public function update(){
 
         
 
@@ -109,7 +109,7 @@ class BackManager extends Manager
     }
 
     //for delete a god
-    function delete(){
+    public function delete(){
         
         $id=$_GET['id'];
             

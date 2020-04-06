@@ -1,6 +1,5 @@
 <?php
 $god = $homeBack->read($_GET['id']);
-    //   $update = $updateBack->update(); 
 ?>
 
 <main>

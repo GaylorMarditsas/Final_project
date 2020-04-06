@@ -12,6 +12,25 @@ class FrontManager extends Manager
         return $req;
     }
 
+    public function viewGallery(){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT * FROM dieux INNER JOIN gallery ON dieux.name = gallery.name_god ORDER BY name');
+        $req->execute();
+        
+        return $req;
+    }
+        //for read a god
+    public function readFront($id){
+            $bdd = $this->dbConnect();
+            $req = $bdd->query("SELECT * FROM dieux WHERE id ='$id' OR name='$id'");
+            $req->execute();
+            $row = $req->fetchAll();
+            if(!empty($row)) {
+                return $row[0];
+            }
+            
+        }
+
     public function searchFront()
     {
         $bdd = $this->dbConnect();

@@ -1,6 +1,6 @@
 <main>
     <h1>Créer un Dieu</h1>
-    <form action="" method="post" name="create">
+    <form action="" method="post" name="create" enctype="multipart/form-data">
         <div>
             <label for="name">Nom :</label>
             <input type="text" name="name">
