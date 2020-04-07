@@ -60,8 +60,9 @@ class BackManager extends Manager
                 $bdd = $this->dbConnect();
                 $req = $bdd->prepare("INSERT INTO `dieux` (`id`, `name`, `description`, `content`, `image`) VALUES (NULL, :name, :description, :content, :image)");
                 
-                if($req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image]))
-                header("Location: indexBack.php?action=admin");
+                if ($req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image])) {
+                    header("Location: indexBack.php?action=admin");
+                }
             }
             
         }

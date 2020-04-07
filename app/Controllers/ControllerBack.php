@@ -4,7 +4,7 @@ namespace projet\Controllers;
 
 class ControllerBack
 {
-    function homeAdmin()
+    public function homeAdmin()
     {
         $homeBack = new \projet\models\BackManager();
         $homeBack->viewBack();
@@ -17,7 +17,7 @@ class ControllerBack
 
     }
 
-    function loginAdmin(){
+    public function loginAdmin(){
 
         $loginBack = new \projet\models\BackManager();
         $loginBack->login();
@@ -27,7 +27,7 @@ class ControllerBack
         require 'app/views/back/login.php';
     }
 
-    function logoutAdmin()
+    public function logoutAdmin()
     {
 
         $createBack = new \projet\models\BackManager();
@@ -37,7 +37,7 @@ class ControllerBack
         require 'app/views/back/logout.php';
 
     }
-    function updateAdmin()
+    public function updateAdmin()
     {
         $homeBack = new \projet\models\BackManager();
         $homeBack->viewBack();
@@ -52,7 +52,7 @@ class ControllerBack
         require 'app/views/back/godUpdate.php';
 
     }
-    function createAdmin()
+    public function createAdmin()
     {
         $homeBack = new \projet\models\BackManager();
         $homeBack->viewBack(); 
@@ -66,7 +66,7 @@ class ControllerBack
         require 'app/views/back/godCreate.php';
 
     }
-    function deleteAdmin()
+    public function deleteAdmin()
     {
 
         $createBack = new \projet\models\BackManager();

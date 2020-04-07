@@ -157,6 +157,7 @@ background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, F
 
 .table-image{
     width:100px;
+    height: 100px;
 }
 /*Contact form*/
 .contact-form {
@@ -274,7 +275,26 @@ background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, F
     -o-transition: 0.4s;
 }
 
-
+/*god page */
+.god-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    
+}
+.god-container div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.god-container div h1{
+    margin: 10px 0;
+}
+.god-container  img{
+    width: 30%;
+    
+}
 /*Back office*/
 .login{
     background-color: #2c3e50;
@@ -335,4 +355,92 @@ background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, F
     margin-top: 10px;
     padding: 3px;
     
+}
+.admin-title{
+    text-align: center;
+    background-color: #2980b9;
+    color:#fff;
+    font-weight: 400;
+}
+.godback{
+    background: #2980b9;
+    background: -webkit-linear-gradient(to bottom,#2980b9, #2c3e50);
+    background: linear-gradient(to bottom,#2980b9, #2c3e50);
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.backform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid white;
+    height: 600px;
+    width: 600px;
+    
+}
+.backform div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 0;
+}
+.backform div textarea{
+    width: 400px;
+}
+.backform div button{
+    border: 1px solid #fff;
+    padding: 10px;
+    background-color: #fff;
+    color: #2980b9;
+}
+.backform div button:hover{
+    border: 1px solid #fff;
+    padding: 10px;
+    background-color: #2980b9;
+    color: #fff;
+}
+.backform label{
+    vertical-align: top;
+    color: #fff;
+}
+.godlist-back{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+      
+}
+.godlist-back table tbody{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 700px;
+}
+.godlist-back table td {
+    width: 60px;
+    color: #fff;
+}
+.godlist-back table td a{
+    color: #fff;
+}
+.godlist-back table td a:hover{
+    text-decoration: underline;
+}
+.anchor-center{
+    text-align: center;
+    background-color: #2980b9;
+    padding: 10px 0;
+}
+.anchor-center a {
+    color: #fff;
+    font-size: 1.2rem;
+    border: 1px solid #fff;
+    padding: 5px;
+}
+.anchor-center a:hover {
+    color: #2980b9;
+    background-color: #fff;
+    border: 1px solid #fff;
 }

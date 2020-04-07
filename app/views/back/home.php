@@ -5,17 +5,13 @@ $user = $homeBack->read('$id');
 
 
 <main>
-<h1>Espace administration</h1>
-    <section class="godlist">
-        <div class="godlist-container center">
-        <a href="indexBack.php?action=create">Ajouter</a>
+<h1 class="admin-title lato">Espace administration</h1>
+<div class="anchor-center lato">
+<a href="indexBack.php?action=create">Ajouter un Dieu</a>
+</div>
+    <section class="godback">
+        <div class="godlist-back">
             <table>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>id</td>
-                    <td>nom</td>
-                    <td>image</td>
-                </tr>
                 <?php while($god = $gods->fetch()) : ?>
                 <tr>
                     <td>&nbsp;</td>
