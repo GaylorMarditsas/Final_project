@@ -11,6 +11,14 @@ class BackManager extends Manager
         return $req;
     }
 
+    public function galleryBack(){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT * FROM dieux INNER JOIN gallery ON dieux.id = gallery.god');
+        $req->execute();
+        
+        return $req;
+    }
+
     //for login as admin 
     public function login(){
 
@@ -44,27 +52,30 @@ class BackManager extends Manager
     //for create a god
     public function create()
     {
-    
-        if(isset($_POST)){
-            if(isset($_POST['name']) 
-            && isset($_POST['description']) 
-            && isset($_POST['content']) 
-            && isset($_POST['image']))
-            {
+        if (isset($_POST)) {
+            if (isset($_POST['name'])
+            && isset($_POST['description'])
+            && isset($_POST['content'])
+            && isset($_FILES['image'])) {
+                $img = $_FILES['image'];
+                
+                $name=$_POST['name'];
+                $description=$_POST['description'];
+                $content=$_POST['content'];
+                $image= "app/public/images/" . $img['name'];
 
-            $name=$_POST['name'];
-            $description=$_POST['description'];
-            $content=$_POST['content'];
-            $image=$_POST['image'];
+                $ext = strtolower(substr($img['name'], -3));
+                $allow_ext = array('jpg','png');
 
                 $bdd = $this->dbConnect();
                 $req = $bdd->prepare("INSERT INTO `dieux` (`id`, `name`, `description`, `content`, `image`) VALUES (NULL, :name, :description, :content, :image)");
                 
-                if ($req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image])) {
+                if (in_array($ext, $allow_ext)) {
+                    move_uploaded_file($img['tmp_name'],"app/public/images/" . $img['name']);
+                    $req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image]);
                     header("Location: indexBack.php?action=admin");
                 }
             }
-            
         }
     }
 
@@ -83,27 +94,52 @@ class BackManager extends Manager
     //for update a god
     public function update(){
 
-        
-
         if(isset($_POST)){
             if(isset($_POST['name']) 
             && isset($_POST['description']) 
-            && isset($_POST['content']) 
-            && isset($_POST['image']))
+            && isset($_POST['content'])
+            && isset($_FILES['image']) && !empty($_FILES['image']['name']))
             {
-            
+                //upload image
+                $img = $_FILES['image'];
+                 //gestion des format accepté
+                $ext = strtolower(substr($img['name'], -3));
+                $allow_ext = array('jpg','png');
+                    if (in_array($ext, $allow_ext)) {
+                        move_uploaded_file($img['tmp_name'], "app/public/images/" . $img['name']);
+                    }
+
             $id=$_GET['id'];
             $name=$_POST['name'];
             $description=$_POST['description'];
             $content=$_POST['content'];
-            $image="app/public/images/". $_POST['image'];
+            $image="app/public/images/". $img['name'];
 
-                $bdd = $this->dbConnect();
+            $bdd = $this->dbConnect();
+            $req = $bdd->prepare("UPDATE `dieux` SET `name` = :name, `description` = :description, `content` = :content, `image` = :image WHERE `dieux`.`id` = :id");
 
-                $req = $bdd->prepare("UPDATE `dieux` SET `name` = :name, `description` = :description, `content` = :content, `image` = :image WHERE `dieux`.`id` = :id");
-                
-                if($req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image, ':id'=>$id]))
-                header("Location: indexBack.php?action=admin");
+                    if($req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image, ':id'=>$id])){
+                    header("Location: indexBack.php?action=admin");
+                }
+                    
+            }
+            //si l'image n'est pas mise à jour
+            else if(isset($_POST['name']) 
+            && isset($_POST['description']) 
+            && isset($_POST['content'])
+            && isset($_FILES['image']) && empty($_FILES['image']['name']) ){
+
+                $id=$_GET['id'];
+            $name=$_POST['name'];
+            $description=$_POST['description'];
+            $content=$_POST['content'];
+
+            $bdd = $this->dbConnect();
+            $req = $bdd->prepare("UPDATE `dieux` SET `name` = :name, `description` = :description, `content` = :content WHERE `dieux`.`id` = :id");
+
+                    if($req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':id'=>$id])){
+                    header("Location: indexBack.php?action=admin");
+                }
             }
             
         }

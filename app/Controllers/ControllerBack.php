@@ -16,6 +16,18 @@ class ControllerBack
         require 'app/views/back/home.php';
 
     }
+    function galleryBack(){
+
+        $galleryBack = new \projet\models\BackManager();
+        $galleryBack->galleryBack();
+        $godsBack = new \projet\models\BackManager();
+        $godsBack->viewBack();
+        $title = "Galerie";
+
+        require 'app/views/back/layout/head.php';
+        require 'app/views/back/layout/header.php';
+        require 'app/views/back/galleryBack.php';
+    }
 
     public function loginAdmin(){
 

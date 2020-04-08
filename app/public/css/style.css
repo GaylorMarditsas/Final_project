@@ -444,3 +444,23 @@ background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, F
     background-color: #fff;
     border: 1px solid #fff;
 }
+/*gallery back*/
+.galleryBack{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+}
+.galleryBack li{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 10%;
+    background-color: gray;
+    border: 2px solid white;
+}
+.galleryBack li div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

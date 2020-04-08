@@ -5,27 +5,26 @@ $user = $homeBack->read('$id');
 
 
 <main>
-<h1 class="admin-title lato">Espace administration</h1>
-<div class="anchor-center lato">
-<a href="indexBack.php?action=create">Ajouter un Dieu</a>
-</div>
-    <section class="godback">
-        <div class="godlist-back">
-            <table>
-                <?php while($god = $gods->fetch()) : ?>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td><?= $god['id'] ?></td>
-                    <td><?= $god['name'] ?></td>
-                    <td><img class="table-image" src="<?= $god['image'] ?>" alt="<?= $god['name'] ?>" /></td>
-                    <td><a href="indexBack.php?action=update&id=<?= $god['id'] ?>">Modifier</a></td>
-                    <td><a onclick= "return confirm('Voulez-vous vraiment supprimer cet élément ?')"  href="indexBack.php?action=delete&id=<?= $god['id'] ?>">Supprimer</a></td>
-                </tr>
+    <h1 class="admin-title lato">Espace administration</h1>
+    <div class="anchor-center lato">
+        <a href="indexBack.php?action=create">Ajouter un Dieu</a>
+    </div>
+    <section>
+            
+            <ul class="galleryBack center">
+            <?php while($god = $gods->fetch()) : ?>
+                <li>
+                    <div>
+                        <p><?= $god['id'] ?></p>
+                        <h3 class="lato"><?= $god['name'] ?></h3>
+                        <img class="table-image" src="<?= $god['image'] ?>">
+                    </div>
+                    <a href="indexBack.php?action=update&id=<?= $god['id']  ?>">Modifier</a>
+                    <a onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')"
+                            href="indexBack.php?action=delete&id=<?= $god['id'] ?>">Supprimer</a>
+                </li>
                 <?php endwhile ?>
-            </table>
-
-        </div>
-
+            </ul>
     </section>
 </main>
 </body>

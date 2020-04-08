@@ -12,9 +12,10 @@ class FrontManager extends Manager
         return $req;
     }
 
+    //vue de la galerie
     public function viewGallery(){
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT * FROM dieux INNER JOIN gallery ON dieux.name = gallery.name_god ORDER BY name');
+        $req = $bdd->prepare('SELECT * FROM dieux INNER JOIN gallery ON dieux.id = gallery.god');
         $req->execute();
         
         return $req;

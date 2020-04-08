@@ -28,9 +28,13 @@ try{
         }
         else if($_GET['action'] == 'logout'){
             $controllerBack->logoutAdmin();
-        }
+        }else if($_GET['action'] == 'gallery'){
+            $controllerBack->galleryBack();
+        } 
 
-    } else{
+    }
+    
+    else{
         $controllerBack->loginAdmin();
         
     }
