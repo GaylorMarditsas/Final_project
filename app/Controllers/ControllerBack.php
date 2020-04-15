@@ -81,10 +81,29 @@ class ControllerBack
     public function deleteAdmin()
     {
 
-        $createBack = new \projet\models\BackManager();
-        $createBack->delete(); 
+        $deleteBack = new \projet\models\BackManager();
+        $deleteBack->delete(); 
 
         require 'app/views/back/godDelete.php';
+
+    }
+    public function createGallery(){
+        $createImage = new \projet\models\BackManager();
+        $createImage->viewBack();
+        $createImage->createImage();
+        $title = "Ajouter des images";
+
+        require 'app/views/back/layout/head.php';
+        require 'app/views/back/layout/header.php';
+        require 'app/views/back/galleryCreate.php';
+    }
+    public function deleteGallery()
+    {
+
+        $deleteImage = new \projet\models\BackManager();
+        $deleteImage->deleteImage(); 
+
+        require 'app/views/back/galleryDelete.php';
 
     }
 }

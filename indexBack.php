@@ -28,9 +28,16 @@ try{
         }
         else if($_GET['action'] == 'logout'){
             $controllerBack->logoutAdmin();
-        }else if($_GET['action'] == 'gallery'){
+        }
+        else if($_GET['action'] == 'gallery'){
             $controllerBack->galleryBack();
-        } 
+        }
+        else if($_GET['action'] == 'createImage'){
+            $controllerBack->createGallery();
+        }
+        else if($_GET['action'] == 'deleteImage'){
+            $controllerBack->deleteGallery();
+        }
 
     }
     

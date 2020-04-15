@@ -1,6 +1,6 @@
 <?php
 $gods = $homeBack->viewBack();
-$user = $homeBack->read('$id');
+$id = $homeBack->read('$id');
 ?>
 
 

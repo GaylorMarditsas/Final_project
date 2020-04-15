@@ -149,11 +149,70 @@ class BackManager extends Manager
     public function delete(){
         
         $id=$_GET['id'];
-            
+        //connexion à la bdd
         $bdd = $this->dbConnect();
+        //requête pour récuperer le chemin de l'image dans le dossier 
+        $image = $bdd->prepare("SELECT image FROM dieux WHERE `dieux`.`id` = :id");
+        $image->execute([':id'=>$id]);
+        $image = $image->fetch();
+        
+
         $req = $bdd->prepare("DELETE FROM `dieux` WHERE `dieux`.`id` = :id");
                 
-            if($req->execute([':id'=>$id]))
-            header("Location: indexBack.php?action=admin");
+            if ($req->execute([':id'=>$id])) {
+                //supprime le dieu et l'image dans le dossier
+                unlink($image['image']);
+                header("Location: indexBack.php?action=admin");
+                
+            }
+    }
+    //gallery
+
+    //for add image to the gallery
+    public function createImage(){
+        if (isset($_POST)) {
+            if (isset($_POST['name'])
+            && isset($_FILES['image'])) {
+                $img = $_FILES['image'];
+                
+                $name=$_POST['name'];
+                $image= "app/public/images/gallery/" . $img['name'];
+
+                $ext = strtolower(substr($img['name'], -3));
+                $allow_ext = array('jpg','png');
+
+                $bdd = $this->dbConnect();
+                $req = $bdd->prepare("INSERT INTO `gallery` (`id`, `god`, `image`)VALUES (NULL, :name, :image)");
+                
+                if (in_array($ext, $allow_ext)) {
+                    move_uploaded_file($img['tmp_name'],"app/public/images/gallery/" . $img['name']);
+                    $req->execute([':name'=> $name,':image'=> $image]);
+                    header("Location: indexBack.php?action=gallery");
+                }
+            }
+        
+    
+    }
+}
+
+    //for delete image from the gallery
+    public function deleteImage(){
+        
+        $id=$_GET['id'];
+        //connexion à la bdd
+        $bdd = $this->dbConnect();
+        //requête pour supprimer l'image dans le dossier 
+        $image = $bdd->prepare("SELECT image FROM gallery WHERE `gallery`.`id` = :id");
+        $image->execute([':id'=>$id]);
+        $image = $image->fetch();
+
+        $req = $bdd->prepare("DELETE FROM `gallery` WHERE `gallery`.`id` = :id");
+                
+            if ($req->execute([':id'=>$id])) {
+                //supprime le dieu et l'image dans le dossier
+                unlink($image['image']);
+                header("Location: indexBack.php?action=gallery");
+                
+            }
     }
 }

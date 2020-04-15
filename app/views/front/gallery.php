@@ -8,7 +8,7 @@ $galleryFront = $galleryFront->viewGallery();
     
     <?php while($gallery = $galleryFront->fetch()) : ?>
         <div class="gallery-container">
-            <img  class="image" src="<?= $gallery['image'] ?>">
+            <a href="<?= $gallery['image'] ?>" target="_blank"><img  class="image" src="<?= $gallery['image'] ?>"></a>
                 <div class="overlay">
                     <h3 class="lato"><?= $gallery['name'] ?></h3>
                 </div>
