@@ -1,15 +1,26 @@
 
 <?php
-    $gods = $godsFront->viewFront();    
+    $gods = $godsFront->viewFront(); 
+    $godsearch = $godsFront->searchFront()
+
 ?>
 <main>
     <div class="search-gods lato">
-        <form action="FrontManager.php" method="get">
+        <form action="" method="get">
             <label for="search">Rechercher : </label>
-            <input type="search" name="search" autocomplete="off">
+            <input id="search" onKeyUp=searchbar() type="search" name="search" autocomplete="off">
         </form>
     </div>
+    
     <section class="gods-description lato">
+
+            <!-- while($result = $godsearch->fetch()) : -->
+
+        <!-- modele de la div en dessous-->
+    <div id="test"></div>
+    
+        <!-- endwhile; -->
+        
 
                                                                             <!--affichage classique-->
         <?php while($god = $gods->fetch()) : ?>
@@ -32,5 +43,9 @@
 
     </section>
 </main>
+<script
+  src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous"></script>
 <script src="app/public/js/index.js"></script>
 </body>

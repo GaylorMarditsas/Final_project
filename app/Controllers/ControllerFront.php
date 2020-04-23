@@ -31,6 +31,7 @@ class ControllerFront
 
         $searchFront = new \projet\models\FrontManager();
         $searchFront->searchFront();
+
         $title = "Dieux";
 
         require 'app/views/front/layout/head.php';

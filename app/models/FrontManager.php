@@ -12,7 +12,7 @@ class FrontManager extends Manager
         return $req;
     }
 
-    //vue de la galerie
+    //view for the gallery
     public function viewGallery(){
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('SELECT * FROM dieux INNER JOIN gallery ON dieux.id = gallery.god');
@@ -31,17 +31,19 @@ class FrontManager extends Manager
             }
             
         }
-
     public function searchFront()
     {
-        $bdd = $this->dbConnect();
-
-        if (isset($_GET['search']) and !empty($_GET['search'])) {
-            $search = htmlspecialchars($_GET['search']);
-            $req = $bdd->prepare('SELECT * FROM Dieux WHERE name LIKE "%". $search ."%"');
+        if (isset($_GET['search'])) {
+            $search=(String) trim($_GET['search']);
+            $bdd = $this->dbConnect();
+            $req = $bdd->prepare(
+                "SELECT * FROM Dieux WHERE name LIKE ?",
+                array("$search%")
+            );
+        
             $req->execute();
         
         return $req;
+            }
         }
-    }
 }

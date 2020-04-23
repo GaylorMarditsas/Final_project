@@ -20,3 +20,4 @@ $god = $godFront->readFront($_GET['id']);
             <div>
     </section>
 </main>
+</body>

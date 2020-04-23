@@ -36,8 +36,8 @@ class BackManager extends Manager
                 $_SESSION['admin'] = $login['id'];
                 header('Location: indexBack.php?action=admin');
             } 
-            else if (password_verify($password, $login['password'])){
-                echo $error;
+            else {
+                header('Location: indexBack.php');
     
             }
         }
@@ -59,9 +59,9 @@ class BackManager extends Manager
             && isset($_FILES['image'])) {
                 $img = $_FILES['image'];
                 
-                $name=$_POST['name'];
-                $description=$_POST['description'];
-                $content=$_POST['content'];
+                $name=htmlentities($_POST['name']);
+                $description=htmlentities($_POST['description']);
+                $content=htmlentities($_POST['content']);
                 $image= "app/public/images/" . $img['name'];
 
                 $ext = strtolower(substr($img['name'], -3));
@@ -110,9 +110,9 @@ class BackManager extends Manager
                     }
 
             $id=$_GET['id'];
-            $name=$_POST['name'];
-            $description=$_POST['description'];
-            $content=$_POST['content'];
+            $name=htmlentities($_POST['name']);
+            $description=htmlentities($_POST['description']);
+            $content=htmlentities($_POST['content']);
             $image="app/public/images/". $img['name'];
 
             $bdd = $this->dbConnect();
@@ -130,9 +130,9 @@ class BackManager extends Manager
             && isset($_FILES['image']) && empty($_FILES['image']['name']) ){
 
                 $id=$_GET['id'];
-            $name=$_POST['name'];
-            $description=$_POST['description'];
-            $content=$_POST['content'];
+            $name=htmlentities($_POST['name']);
+            $description=htmlentities($_POST['description']);
+            $content=htmlentities($_POST['content']);
 
             $bdd = $this->dbConnect();
             $req = $bdd->prepare("UPDATE `dieux` SET `name` = :name, `description` = :description, `content` = :content WHERE `dieux`.`id` = :id");

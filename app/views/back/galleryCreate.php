@@ -26,3 +26,4 @@ $error= "Le format du fichier n'est pas accepté";
         </form>
     </section>
 </main>
+</body>

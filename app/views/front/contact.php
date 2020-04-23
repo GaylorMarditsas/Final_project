@@ -16,3 +16,5 @@
             <button type="submit">Envoyer</button>
     </form>
 </main>
+<script src="app/public/js/index.js"></script>
+</body>

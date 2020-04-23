@@ -17,3 +17,5 @@ $galleryFront = $galleryFront->viewGallery();
     </div>
 
 </main>
+<script src="app/public/js/index.js"></script>
+</body>

@@ -21,3 +21,4 @@ $galleryBack = $galleryBack->galleryBack();
     </ul>
 
 </main>
+</body>

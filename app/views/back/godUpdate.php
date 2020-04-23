@@ -35,3 +35,4 @@ $god = $homeBack->read($_GET['id']);
 </section>
     
 </main>
+</body>

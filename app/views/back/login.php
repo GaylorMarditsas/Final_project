@@ -1,7 +1,5 @@
 <?php 
-if (!empty($_POST['login'])) {
-    $login =$loginBack->login();
-}
+
 ?>
 
 <main>
@@ -28,3 +26,4 @@ if (!empty($_POST['login'])) {
 
     </div>
 </main>
+</body>
