@@ -1,8 +1,8 @@
 
 <?php
     $gods = $godsFront->viewFront(); 
-    $godsearch = $godsFront->searchFront()
-
+    $godsearch = $godsFront->searchFront();
+   
 ?>
 <main>
     <div class="search-gods lato">
@@ -14,12 +14,12 @@
     
     <section class="gods-description lato">
 
-            <!-- while($result = $godsearch->fetch()) : -->
+           
 
         <!-- modele de la div en dessous-->
     <div id="test"></div>
     
-        <!-- endwhile; -->
+   
         
 
                                                                             <!--affichage classique-->

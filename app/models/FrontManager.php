@@ -42,7 +42,7 @@ class FrontManager extends Manager
             );
         
             $req->execute();
-        
+        dd($req);
         return $req;
             }
         }

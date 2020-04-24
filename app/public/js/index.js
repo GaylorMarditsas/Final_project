@@ -11,7 +11,7 @@ function searchbar(){
             data: 'search=' + encodeURIComponent(search),
             success: function(data){
                 let test = document.getElementById("test");
-                test.append(data);
+                console.log(data);
                 
 
                 

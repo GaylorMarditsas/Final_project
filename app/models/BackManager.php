@@ -43,41 +43,22 @@ class BackManager extends Manager
         }
     }
 
-    public function logout(){
-        unset($_SESSION['admin']);
-        session_destroy();
-        header('Location: index.php');
-    }
+    
 
     //for create a god
-    public function create()
+    public function create($img, $name, $description, $content, $image)
     {
-        if (isset($_POST)) {
-            if (isset($_POST['name'])
-            && isset($_POST['description'])
-            && isset($_POST['content'])
-            && isset($_FILES['image'])) {
-                $img = $_FILES['image'];
-                
-                $name=htmlentities($_POST['name']);
-                $description=htmlentities($_POST['description']);
-                $content=htmlentities($_POST['content']);
-                $image= "app/public/images/" . $img['name'];
+        
 
-                $ext = strtolower(substr($img['name'], -3));
-                $allow_ext = array('jpg','png');
-
-                $bdd = $this->dbConnect();
-                $req = $bdd->prepare("INSERT INTO `dieux` (`id`, `name`, `description`, `content`, `image`) VALUES (NULL, :name, :description, :content, :image)");
-                
-                if (in_array($ext, $allow_ext)) {
-                    move_uploaded_file($img['tmp_name'],"app/public/images/" . $img['name']);
-                    $req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image]);
-                    header("Location: indexBack.php?action=admin");
-                }
-            }
-        }
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("INSERT INTO `dieux` (`id`, `name`, `description`, `content`, `image`) VALUES (NULL, :name, :description, :content, :image)");
+        
+        move_uploaded_file($img['tmp_name'],"app/public/images/" . $img['name']);
+        $req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image]);
+        header("Location: indexBack.php?action=admin");
+    
     }
+    
 
     //for read a god
     public function read($id){
@@ -92,59 +73,24 @@ class BackManager extends Manager
     }
 
     //for update a god
-    public function update(){
-
-        if(isset($_POST)){
-            if(isset($_POST['name']) 
-            && isset($_POST['description']) 
-            && isset($_POST['content'])
-            && isset($_FILES['image']) && !empty($_FILES['image']['name']))
-            {
-                //upload image
-                $img = $_FILES['image'];
-                 //gestion des format accepté
-                $ext = strtolower(substr($img['name'], -3));
-                $allow_ext = array('jpg','png');
-                    if (in_array($ext, $allow_ext)) {
-                        move_uploaded_file($img['tmp_name'], "app/public/images/" . $img['name']);
-                    }
-
+    public function updateImg($img, $name, $description, $content, $image)
+    {       
             $id=$_GET['id'];
-            $name=htmlentities($_POST['name']);
-            $description=htmlentities($_POST['description']);
-            $content=htmlentities($_POST['content']);
-            $image="app/public/images/". $img['name'];
-
             $bdd = $this->dbConnect();
             $req = $bdd->prepare("UPDATE `dieux` SET `name` = :name, `description` = :description, `content` = :content, `image` = :image WHERE `dieux`.`id` = :id");
-
-                    if($req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image, ':id'=>$id])){
-                    header("Location: indexBack.php?action=admin");
-                }
-                    
-            }
-            //si l'image n'est pas mise à jour
-            else if(isset($_POST['name']) 
-            && isset($_POST['description']) 
-            && isset($_POST['content'])
-            && isset($_FILES['image']) && empty($_FILES['image']['name']) ){
-
-                $id=$_GET['id'];
-            $name=htmlentities($_POST['name']);
-            $description=htmlentities($_POST['description']);
-            $content=htmlentities($_POST['content']);
-
+            move_uploaded_file($img['tmp_name'], "app/public/images/" . $img['name']);
+            $req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image, ':id'=>$id]);
+            header("Location: indexBack.php?action=admin");
+    }
+    //update a god without update his picture
+    public function update($name, $description, $content){
+           
+            $id=$_GET['id'];
             $bdd = $this->dbConnect();
             $req = $bdd->prepare("UPDATE `dieux` SET `name` = :name, `description` = :description, `content` = :content WHERE `dieux`.`id` = :id");
-
-                    if($req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':id'=>$id])){
-                    header("Location: indexBack.php?action=admin");
-                }
-            }
-            
-        }
+            $req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':id'=>$id]);
+            header("Location: indexBack.php?action=admin");
     }
-
     //for delete a god
     public function delete(){
         
@@ -169,32 +115,19 @@ class BackManager extends Manager
     //gallery
 
     //for add image to the gallery
-    public function createImage(){
-        if (isset($_POST)) {
-            if (isset($_POST['name'])
-            && isset($_FILES['image'])) {
-                $img = $_FILES['image'];
+    public function createImage($img, $name, $image){
+        
                 
-                $name=$_POST['name'];
-                $image= "app/public/images/gallery/" . $img['name'];
-
-                $ext = strtolower(substr($img['name'], -3));
-                $allow_ext = array('jpg','png');
-
                 $bdd = $this->dbConnect();
                 $req = $bdd->prepare("INSERT INTO `gallery` (`id`, `god`, `image`)VALUES (NULL, :name, :image)");
-                
-                if (in_array($ext, $allow_ext)) {
-                    move_uploaded_file($img['tmp_name'],"app/public/images/gallery/" . $img['name']);
-                    $req->execute([':name'=> $name,':image'=> $image]);
+                move_uploaded_file($img['tmp_name'],"app/public/images/gallery/" . $img['name']);
+                $req->execute([':name'=> $name,':image'=> $image]);
                     header("Location: indexBack.php?action=gallery");
-                }
-            }
+                
+            
         
     
     }
-}
-
     //for delete image from the gallery
     public function deleteImage(){
         

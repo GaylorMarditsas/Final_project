@@ -1,4 +1,5 @@
-<?php $error= "Votre fichier n'est pas une image";?>
+<?php 
+$error= "Votre fichier n'est pas une image";?>
 
 <main>
     <h1 class="admin-title lato">Créer un Dieu</h1>
