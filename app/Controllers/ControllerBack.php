@@ -144,8 +144,7 @@ class ControllerBack
     //update a god
     public function updategod()
     {
-        if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image'])
-        && !empty($_FILES['image']['name'])){
+        if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image']) && !empty($_FILES['image']['name'])){
             $img = $_FILES['image'];
             $id=$this->id();
             $name=htmlentities($_POST['name']);
