@@ -125,9 +125,7 @@ class ControllerBack
     //create a god
     public function creategod()
     {
-        if (isset($_POST) && !empty($_POST)) {
-            if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image']))
-            {
+        if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image']) && !empty($_POST)){
                 $img = $_FILES['image'];
                 $name=htmlentities($_POST['name']);
                 $description=htmlentities($_POST['description']);
@@ -137,35 +135,32 @@ class ControllerBack
 
                 if (!strstr($img['type'], 'jpg') && !strstr($img['type'], 'jpeg') && !strstr($img['type'], 'png')) {
                     return false;
-                } else {
+                }else {
                     $creategod = new \projet\models\BackManager();
                     $creategod->create($img, $name, $description, $content, $image);
-                }
-            }
+                }      
         }
     }
     //update a god
     public function updategod()
     {
-        if (isset($_POST)) {
-            if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image'])
-            && !empty($_FILES['image']['name']))
-            {
-                $img = $_FILES['image'];
-                $id=$this->id();
-                $name=htmlentities($_POST['name']);
-                $description=htmlentities($_POST['description']);
-                $content=htmlentities($_POST['content']);
-                $image="app/public/images/". $img['name'];
+        if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image'])
+        && !empty($_FILES['image']['name'])){
+            $img = $_FILES['image'];
+            $id=$this->id();
+            $name=htmlentities($_POST['name']);
+            $description=htmlentities($_POST['description']);
+            $content=htmlentities($_POST['content']);
+            $image="app/public/images/". $img['name'];
 
-                if (!strstr($img['type'], 'jpg') && !strstr($img['type'], 'jpeg') && !strstr($img['type'], 'png')){
-                    return false;
-                }
-                else{
-                    $updateImg = new \projet\models\BackManager();
-                    $updateImg->updateImg($img, $name, $description, $content, $image);
-                }
-            }elseif (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image'])
+            if (!strstr($img['type'], 'jpg') && !strstr($img['type'], 'jpeg') && !strstr($img['type'], 'png')) {
+                return false;
+            } else {
+                $updateImg = new \projet\models\BackManager();
+                $updateImg->updateImg($img, $name, $description, $content, $image);
+            }
+        }
+            else if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image'])
             && empty($_FILES['image']['name'])){
                 $id=$this->id();
                 $name=htmlentities($_POST['name']);
@@ -174,17 +169,15 @@ class ControllerBack
 
                 $updategod = new \projet\models\BackManager();
                 $updategod->update($name, $description, $content);
-            }
         }
     }
     //add pictures to the gallery
     public function addGallery()
     {
-        if (isset($_POST)) {
-            if (isset($_POST['name'], $_FILES['image'])){
-                $img = $_FILES['image'];
-                $name=$_POST['name'];
-                $image= "app/public/images/gallery/" . $img['name'];
+        if (isset($_POST['name'], $_FILES['image'])){
+            $img = $_FILES['image'];
+            $name=$_POST['name'];
+            $image= "app/public/images/gallery/" . $img['name'];
 
                 if (!strstr($img['type'], 'jpg') && !strstr($img['type'], 'jpeg') && !strstr($img['type'], 'png')){
                     return false;
@@ -194,7 +187,6 @@ class ControllerBack
                     $addImg->createImage($img, $name, $image);
                 }
             }
-        }
     }
 }
     
