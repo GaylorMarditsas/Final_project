@@ -40,10 +40,9 @@ class FrontManager extends Manager
                 "SELECT * FROM Dieux WHERE name LIKE ?",
                 array("$search%")
             );
-        
             $req->execute();
-        dd($req);
-        return $req;
-            }
+            dd($req);
+            return $req;
         }
+    }
 }
