@@ -1,4 +1,6 @@
+<?php 
 
+?>
 <main>
     <form class="contact-form center" action="" method="post">
         <div class="form-group lato">
@@ -6,7 +8,7 @@
             <input type="text" name="nom" id="">
         </div>
         <div class="form-group lato">
-            <label for="nom">Mail</label>
+            <label for="email">Mail</label>
             <input type="email" name="email" id="">
         </div>
         <div class="form-group lato">

@@ -20,7 +20,7 @@
                     <button type="submit" name="submit">Valider</button>
                     <button><a href="index.php">Retour</a></button>
                 </div>
-                <?php if(isset($error)){echo $error;} ?>
+                <?php if(isset($error) && !empty($_POST)){echo $error;} ?>
             </form>
         </div>
 

@@ -4,6 +4,9 @@ namespace projet\Controllers;
 
 class ControllerBack
 {
+    public function id(){
+        return $_GET['id'];
+    }
     public function homeAdmin()
     {
         $homeBack = new \projet\models\BackManager();
@@ -30,12 +33,24 @@ class ControllerBack
 
     public function loginAdmin()
     {
-        $loginBack = new \projet\models\BackManager();
-        $loginBack->login();
+        $loginBack = new \projet\Controllers\ControllerBack();
+        $loginBack->verifyLogin();
+        $error = "Ces identifiants sont incorrects";
         $title = "Login";
 
         require 'app/views/back/layout/head.php';
         require 'app/views/back/login.php';
+    }
+    public function verifyLogin(){
+        if (isset($_POST) && isset($_POST['pseudo'])
+        && isset($_POST['password']) && !empty($_POST)) {
+            $pseudo = htmlentities($_POST['pseudo']);
+            $password = htmlentities($_POST['password']);
+        
+            $login = new \projet\models\BackManager();
+            $login->login($pseudo, $password);
+        }
+
     }
 
     public function logoutAdmin()
@@ -134,7 +149,7 @@ class ControllerBack
             }
         }
     }
-    //u^date a god
+    //update a god
     public function updategod()
     {
         if (isset($_POST)) {
@@ -144,23 +159,27 @@ class ControllerBack
             && isset($_FILES['image']) && !empty($_FILES['image']['name'])) {
                 $img = $_FILES['image'];
 
-                $id=$_GET['id'];
+                $id=$this->id();
                 $name=htmlentities($_POST['name']);
                 $description=htmlentities($_POST['description']);
                 $content=htmlentities($_POST['content']);
                 $image="app/public/images/". $img['name'];
 
-                if (!strstr($img['type'], 'jpg') && !strstr($img['type'], 'jpeg') && !strstr($img['type'], 'png')) {
+                if (!strstr($img['type'], 'jpg') && !strstr($img['type'], 'jpeg') && !strstr($img['type'], 'png'))
+                {
                     return false;
-                } else {
+                }
+                else
+                {
                     $updateImg = new \projet\models\BackManager();
                     $updateImg->updateImg($img, $name, $description, $content, $image);
                 }
             } elseif (isset($_POST['name'])
             && isset($_POST['description'])
             && isset($_POST['content'])
-            && isset($_FILES['image']) && empty($_FILES['image']['name'])) {
-                $id=$_GET['id'];
+            && isset($_FILES['image']) && empty($_FILES['image']['name']))
+            {
+                $id=$this->id();
                 $name=htmlentities($_POST['name']);
                 $description=htmlentities($_POST['description']);
                 $content=htmlentities($_POST['content']);
@@ -181,9 +200,12 @@ class ControllerBack
                 $name=$_POST['name'];
                 $image= "app/public/images/gallery/" . $img['name'];
 
-                if (!strstr($img['type'], 'jpg') && !strstr($img['type'], 'jpeg') && !strstr($img['type'], 'png')) {
+                if (!strstr($img['type'], 'jpg') && !strstr($img['type'], 'jpeg') && !strstr($img['type'], 'png'))
+                {
                     return false;
-                } else {
+                }
+                else
+                {
                     $addImg = new \projet\models\BackManager();
                     $addImg->createImage($img, $name, $image);
                 }
