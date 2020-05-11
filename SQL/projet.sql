@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 23 avr. 2020 à 15:56
+-- Généré le : lun. 11 mai 2020 à 12:43
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.3
 
@@ -74,12 +74,10 @@ INSERT INTO `gallery` (`id`, `god`, `image`) VALUES
 (5, '2', 'app/public/images/gallery/frigg-wallpaper1.jpg'),
 (6, '2', 'app/public/images/gallery/frigg-wallpaper2.jpg'),
 (7, '4', 'app/public/images/gallery/thor-vs-loki.jpg'),
-(8, '6', 'app/public/images/gallery/freya-wallpaper.jpg'),
 (9, '6', 'app/public/images/gallery/freya-wallpaper1.jpg'),
 (10, '6', 'app/public/images/gallery/freya-wallpaper2.jpg'),
 (11, '5', 'app/public/images/gallery/thor-wallpaper.jpg'),
 (12, '5', 'app/public/images/gallery/thor-wallpaper1.jpg'),
-(14, '6', 'app/public/images/gallery/freya-wallpaper.jpg'),
 (15, '5', 'app/public/images/gallery/thor-wallpaper2.jpg');
 
 -- --------------------------------------------------------
@@ -131,13 +129,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `dieux`
 --
 ALTER TABLE `dieux`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT pour la table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT pour la table `user`
