@@ -31,18 +31,13 @@ class FrontManager extends Manager
             }
             
         }
-    public function searchFront()
-    {
-        if (isset($_GET['search'])) {
-            $search=(String) trim($_GET['search']);
+        public function search($name){
             $bdd = $this->dbConnect();
-            $req = $bdd->prepare(
-                "SELECT * FROM Dieux WHERE name LIKE ?",
-                array("$search%")
-            );
-            $req->execute();
-            dd($req);
-            return $req;
+            $req = $bdd->prepare("SELECT name, description, image FROM Dieux WHERE name LIKE :name");
+            $req->execute([':name' => $name .'%']);
+            $results= $req->fetchAll();
+            echo json_encode($results);
+            
         }
-    }
+    
 }

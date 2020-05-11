@@ -6,7 +6,7 @@ class BackManager extends Manager
 {
     public function id()
     {
-        return $_GET['id'];
+        return htmlspecialchars($_GET['id']);
     }
     public function viewBack()
     {
@@ -30,8 +30,8 @@ class BackManager extends Manager
     public function login($pseudo, $password)
     {
             $bdd = $this->dbConnect();
-            $login = $bdd ->prepare('SELECT id, password FROM user WHERE pseudo = ?');
-            $login->execute([$pseudo]);
+            $login = $bdd ->prepare('SELECT id, password FROM user WHERE pseudo = :pseudo');
+            $login->execute([':pseudo'  => $pseudo]);
             $login = $login ->fetch();
 
             if (password_verify($password, $login['password'])) {
@@ -56,8 +56,8 @@ class BackManager extends Manager
     public function read($id)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->query("SELECT * FROM dieux WHERE id ='$id'");
-        $req->execute();
+        $req = $bdd->prepare("SELECT * FROM dieux WHERE id = :id");
+        $req->execute([':id'=> $id]);
         $row = $req->fetchAll();
         if(!empty($row)) {
             return $row[0];

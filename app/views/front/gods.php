@@ -1,8 +1,6 @@
 
 <?php
-    $gods = $godsFront->viewFront(); 
-    $godsearch = $godsFront->searchFront();
-   
+    $gods = $godsFront->viewFront();   
 ?>
 <main>
     <div class="search-gods lato">
@@ -11,14 +9,16 @@
             <input id="search" onKeyUp=searchbar() type="search" name="search" autocomplete="off">
         </form>
     </div>
+    <div id="test">
     
+    </div>
     <section class="gods-description lato">
 
            
 
         <!-- modele de la div en dessous-->
-    <div id="test"></div>
-    
+   
+   
    
         
 

@@ -17,6 +17,7 @@ $error= "Le format du fichier n'est pas accepté";
             </div>
             <div>
                 <label for="image">Image</label>
+                <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
                 <input type="file"  name="image">
                 <span><?php if(isset($error) && !empty($_FILES)){echo $error;}?></span>
             </div>

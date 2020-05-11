@@ -4,8 +4,9 @@ namespace projet\Controllers;
 
 class ControllerBack
 {
-    public function id(){
-        return $_GET['id'];
+    public function id()
+    {
+        return htmlspecialchars($_GET['id']);
     }
     public function homeAdmin()
     {
@@ -41,7 +42,8 @@ class ControllerBack
         require 'app/views/back/layout/head.php';
         require 'app/views/back/login.php';
     }
-    public function verifyLogin(){
+    public function verifyLogin()
+    {
         if (isset($_POST) && isset($_POST['pseudo'],$_POST['password'])
         && !empty($_POST)) {
             $pseudo = htmlentities($_POST['pseudo']);
@@ -125,67 +127,92 @@ class ControllerBack
     //create a god
     public function creategod()
     {
-        if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image']) && !empty($_POST)){
-                $img = $_FILES['image'];
-                $name=htmlentities($_POST['name']);
-                $description=htmlentities($_POST['description']);
-                $content=htmlentities($_POST['content']);
-                
-                $image= "app/public/images/" . $img['name'];
+        if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image']) && !empty($_POST)) {
+            $img = $_FILES['image'];
+            $name=htmlentities($_POST['name']);
+            $description=htmlentities($_POST['description']);
+            $content=htmlentities($_POST['content']);
+            $image= "app/public/images/" . strtolower($img['name']);
 
-                if (!strstr($img['type'], 'jpg') && !strstr($img['type'], 'jpeg') && !strstr($img['type'], 'png')) {
-                    return false;
-                }else {
-                    $creategod = new \projet\models\BackManager();
-                    $creategod->create($img, $name, $description, $content, $image);
-                }      
+            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+            $finfo = finfo_file($finfo, $img['tmp_name']);
+            //i don't know if finfo_close() is really necessary but whith it i've got an error (parameters need to be resource but string are given)
+
+            if ($finfo === 'image/png' || $finfo === 'image/jpeg') {
+                $creategod = new \projet\models\BackManager();
+                $creategod->create($img, $name, $description, $content, $image);
+            } elseif ($finfo === false) {
+                $error = "Le format n'est pas détecté";
+                echo $error;
+            } else {
+                $error = "Le format n'est pas jpeg ou png";
+                echo $error;
+            }
+               
+            
         }
     }
     //update a god
     public function updategod()
     {
-        if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image']) && !empty($_FILES['image']['name'])){
+        if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image']) && !empty($_FILES['image']['name'])) {
             $img = $_FILES['image'];
             $id=$this->id();
             $name=htmlentities($_POST['name']);
             $description=htmlentities($_POST['description']);
             $content=htmlentities($_POST['content']);
-            $image="app/public/images/". $img['name'];
+            $image="app/public/images/". strtolower($img['name']);
 
-            if (!strstr($img['type'], 'jpg') && !strstr($img['type'], 'jpeg') && !strstr($img['type'], 'png')) {
-                return false;
-            } else {
+            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+            $finfo = finfo_file($finfo, $img['tmp_name']);
+            //i don't know if finfo_close() is really necessary but whith it i've got an error (parameters need to be resource but string are given)
+
+            if ($finfo === 'image/png' || $finfo === 'image/jpeg') {
                 $updateImg = new \projet\models\BackManager();
                 $updateImg->updateImg($img, $name, $description, $content, $image);
+            } elseif ($finfo === false) {
+                $error = "Le format n'est pas détecté";
+                echo $error;
+            } else {
+                $error = "Le format n'est pas jpeg ou png";
+                echo $error;
             }
-        }
-            else if (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image'])
-            && empty($_FILES['image']['name'])){
-                $id=$this->id();
-                $name=htmlentities($_POST['name']);
-                $description=htmlentities($_POST['description']);
-                $content=htmlentities($_POST['content']);
+        } elseif (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image'])
+            && empty($_FILES['image']['name'])) {
+            $id=$this->id();
+            $name=htmlentities($_POST['name']);
+            $description=htmlentities($_POST['description']);
+            $content=htmlentities($_POST['content']);
 
-                $updategod = new \projet\models\BackManager();
-                $updategod->update($name, $description, $content);
+            $updategod = new \projet\models\BackManager();
+            $updategod->update($name, $description, $content);
         }
     }
+
     //add pictures to the gallery
     public function addGallery()
     {
-        if (isset($_POST['name'], $_FILES['image'])){
+        if (isset($_POST['name'], $_FILES['image'])) {
             $img = $_FILES['image'];
             $name=$_POST['name'];
-            $image= "app/public/images/gallery/" . $img['name'];
+            $image= "app/public/images/gallery/" . strtolower($img['name']);
 
-                if (!strstr($img['type'], 'jpg') && !strstr($img['type'], 'jpeg') && !strstr($img['type'], 'png')){
-                    return false;
-                }
-                else{
+
+                $finfo = finfo_open(FILEINFO_MIME_TYPE);
+                $finfo = finfo_file($finfo, $img['tmp_name']);
+                //i don't know if finfo_close() is really necessary but whith it i've got an error (parameters need to be resource but string are given)
+
+                if ($finfo === 'image/png' || $finfo === 'image/jpeg') {
                     $addImg = new \projet\models\BackManager();
                     $addImg->createImage($img, $name, $image);
+                } elseif ($finfo === false) {
+                    $error = "Le format n'est pas détecté";
+                    echo $error;
+                } else {
+                    $error = "Le format n'est pas jpeg ou png";
+                    echo $error;
                 }
-            }
+
+        }
     }
 }
-    

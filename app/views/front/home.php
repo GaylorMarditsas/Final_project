@@ -65,19 +65,10 @@ $gods = $homeFront->viewFront();
                 qui servaient Odin".</p>
         </div>
 
-    </section>
-    <section class="godlist">
-        <div class="godlist-container center">
-            <?php while($god = $gods->fetch()) : ?>
-            <figure>
-                <a href="index.php?action=god&id=<?= $god['id'] ?>"><img src="<?= $god['image'] ?>"
-                        alt="<?= $god['name'] ?>" /></a>
-                <figcaption><a href="index.php?action=god&id=<?= $god['id'] ?>"><?= $god['name'] ?></a></figcaption>
-            </figure>
-            <?php endwhile ?>
-        </div>
-
-    </section>
+    </section>   
 </main>
+<footer>
+
+</footer>
 <script src="app/public/js/index.js"></script>
 </body>

@@ -15,6 +15,9 @@ try{
         else if($_GET['action'] == 'gods'){
             $controllerFront->godsFront();
         }
+        else if($_GET['action'] == 'search'){
+            $controllerFront->searchFront();
+        }
         else if($_GET['action'] == 'gallery'){
             $controllerFront->galleryFront();
         }
