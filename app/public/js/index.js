@@ -1,5 +1,5 @@
 
-function searchbar(){
+document.getElementById('result');addEventListener('keyup', function searchbar(){
 
     let search = document.getElementById('search').value;
     let img = document.createElement('img');
@@ -11,23 +11,41 @@ function searchbar(){
             url: 'index.php?action=search',
             data: 'search=' + encodeURIComponent(search),
             success: function(data){
-                let test = document.getElementById("test");
+                let result = document.getElementById("result"); // div with the future data
                 console.log(JSON.parse(data));
                 let god = JSON.parse(data);
                 
                 if(data != ""){
+                    result.innerHTML = ""; //make the div empty
+                    //lien
+                    let a = document.createElement('a');
+                    a.setAttribute('href','index.php?action=god&id='+ god[0]["id"]);
+                    //image 
                     let src = document.createAttribute("src");
                     src.value = god[0]["image"];
                     img.setAttributeNode(src);
-                   test.append(img);
-                }else{
-                    test.innerHTML = "<p>Aucune correspondance trouvée</p>"
+                    a.appendChild(img);
+                    result.appendChild(a);
+                    //div for name and descritpion
+                    let div = document.createElement('div');
+                    result.appendChild(div);
+                    //name of the god
+                    let h2 = document.createElement('h2'); 
+                    h2.setAttribute('class', 'name'); // add class to the h2
+                    let name = document.createTextNode(god[0]["name"]); 
+                    h2.appendChild(name);// add the name to the h2
+                    a.appendChild(h2);
+                    div.appendChild(a);
+                    // description of the god
+                    let p = document.createElement('p');
+                    let description = document.createTextNode(god[0]['description']);
+                    p.appendChild(description);
+                    div.appendChild(p);
                 }
-
             }
         })
     }
-}
+})
 
 
 //slack

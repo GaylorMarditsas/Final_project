@@ -9,7 +9,7 @@
             <input id="search" onKeyUp=searchbar() type="search" name="search" autocomplete="off">
         </form>
     </div>
-    <div id="test">
+    <div id="result" class="lato gods center">
     
     </div>
     <section class="gods-description lato">

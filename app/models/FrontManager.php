@@ -33,7 +33,7 @@ class FrontManager extends Manager
         }
         public function search($name){
             $bdd = $this->dbConnect();
-            $req = $bdd->prepare("SELECT name, description, image FROM Dieux WHERE name LIKE :name");
+            $req = $bdd->prepare("SELECT id, name, description, image FROM Dieux WHERE name LIKE :name");
             $req->execute([':name' => $name .'%']);
             $results= $req->fetchAll();
             echo json_encode($results);
