@@ -260,8 +260,9 @@ background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, F
     
 }
 .gallery-container{
- width: 28%;
- height: 50%;
+display: flex;
+justify-content: center;
+ width: 400px;
  margin-top:20px;
  position: relative;
 }
@@ -269,12 +270,9 @@ background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, F
     color: #fff;
     font-weight: 300;
 }
-.image{
-    width: 100%;
-}
 /* hover*/
 .overlay{
-    width: 100%;
+    width: 400px;
     position: absolute;
     bottom: 0;
     text-align: center;

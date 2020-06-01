@@ -193,18 +193,21 @@ class ControllerBack
     public function addGallery()
     {
         if (isset($_POST['name'], $_FILES['image'])) {
-            $img = $_FILES['image'];
-            $name=$_POST['name'];
-            $image= "app/public/images/gallery/" . strtolower($img['name']);
+            $source = $_FILES['image'];
+            $name =$_POST['name'];
+            $image_path = "app/public/images/gallery/" . strtolower($source['name']);
+            $resized_path = "app/public/images/gallery/resized/" . strtolower($source['name']);
 
 
                 $finfo = finfo_open(FILEINFO_MIME_TYPE);
-                $finfo = finfo_file($finfo, $img['tmp_name']);
+                $finfo = finfo_file($finfo, $source['tmp_name']);
                 //i don't know if finfo_close() is really necessary but whith it i've got an error (parameters need to be resource but string are given)
 
                 if ($finfo === 'image/png' || $finfo === 'image/jpeg') {
                     $addImg = new \projet\models\BackManager();
-                    $addImg->createImage($img, $name, $image);
+                    $addImg->createImage($source, $name, $image_path, $resized_path);
+                    $resizeImg = new \projet\models\BackManager();
+                    $resizeImg->resizeImage($source, $resized_path, $name);
                 } elseif ($finfo === false) {
                     $error = "Le format n'est pas détecté";
                     echo $error;

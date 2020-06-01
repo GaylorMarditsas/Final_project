@@ -23,7 +23,7 @@ class FrontManager extends Manager
         //for read a god
     public function readFront($id){
             $bdd = $this->dbConnect();
-            $req = $bdd->query("SELECT * FROM dieux WHERE id ='$id' OR name='$id'");
+            $req = $bdd->prepare("SELECT * FROM dieux WHERE id ='$id' OR name='$id'");
             $req->execute();
             $row = $req->fetchAll();
             if(!empty($row)) {
@@ -31,6 +31,8 @@ class FrontManager extends Manager
             }
             
         }
+
+        //searchbar for match a god
         public function search($name){
             $bdd = $this->dbConnect();
             $req = $bdd->prepare("SELECT id, name, description, image FROM Dieux WHERE name LIKE :name");

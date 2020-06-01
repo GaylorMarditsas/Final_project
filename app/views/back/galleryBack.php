@@ -12,7 +12,7 @@ $galleryBack = $galleryBack->galleryBack();
         <?php while($gallery = $galleryBack->fetch()) : ?>
         <li>
             <div>
-                <img class="table-image" src="<?= $gallery['image'] ?>">
+                <img class="table-image" src="<?= $gallery['resized_image'] ?>">
                 <h3 class="lato"><?= $gallery['name'] ?></h3>
             </div>
             <a href="indexBack.php?action=deleteImage&id=<?= $gallery['id'] ?>">Supprimer</a>
