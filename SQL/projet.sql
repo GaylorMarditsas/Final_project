@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 11 mai 2020 à 12:43
+-- Généré le : lun. 08 juin 2020 à 12:38
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.3
 
@@ -58,27 +58,25 @@ INSERT INTO `dieux` (`id`, `name`, `description`, `content`, `image`) VALUES
 
 CREATE TABLE `gallery` (
   `id` int(11) NOT NULL,
-  `god` varchar(100) NOT NULL,
-  `image` varchar(255) NOT NULL
+  `god` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `resized_image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `gallery`
 --
 
-INSERT INTO `gallery` (`id`, `god`, `image`) VALUES
-(1, '1', 'app/public/images/gallery/odin-wallpaper1.jpg'),
-(2, '1', 'app/public/images/gallery/odin-wallpaper2.jpg'),
-(3, '1', 'app/public/images/gallery/odin-wallpaper3.jpg'),
-(4, '1', 'app/public/images/gallery/odin-wallpaper4.jpg'),
-(5, '2', 'app/public/images/gallery/frigg-wallpaper1.jpg'),
-(6, '2', 'app/public/images/gallery/frigg-wallpaper2.jpg'),
-(7, '4', 'app/public/images/gallery/thor-vs-loki.jpg'),
-(9, '6', 'app/public/images/gallery/freya-wallpaper1.jpg'),
-(10, '6', 'app/public/images/gallery/freya-wallpaper2.jpg'),
-(11, '5', 'app/public/images/gallery/thor-wallpaper.jpg'),
-(12, '5', 'app/public/images/gallery/thor-wallpaper1.jpg'),
-(15, '5', 'app/public/images/gallery/thor-wallpaper2.jpg');
+INSERT INTO `gallery` (`id`, `god`, `image`, `resized_image`) VALUES
+(81, 1, 'app/public/images/gallery/odin-wallpaper1.jpg', 'app/public/images/gallery/resized/odin-wallpaper1.jpg'),
+(82, 1, 'app/public/images/gallery/odin-wallpaper2.jpg', 'app/public/images/gallery/resized/odin-wallpaper2.jpg'),
+(83, 1, 'app/public/images/gallery/odin-wallpaper3.jpg', 'app/public/images/gallery/resized/odin-wallpaper3.jpg'),
+(84, 1, 'app/public/images/gallery/odin-wallpaper4.jpg', 'app/public/images/gallery/resized/odin-wallpaper4.jpg'),
+(85, 6, 'app/public/images/gallery/freya-wallpaper1.jpg', 'app/public/images/gallery/resized/freya-wallpaper1.jpg'),
+(86, 6, 'app/public/images/gallery/freya-wallpaper2.jpg', 'app/public/images/gallery/resized/freya-wallpaper2.jpg'),
+(87, 2, 'app/public/images/gallery/frigg-wallpaper2.jpg', 'app/public/images/gallery/resized/frigg-wallpaper2.jpg'),
+(88, 5, 'app/public/images/gallery/thor-wallpaper1.jpg', 'app/public/images/gallery/resized/thor-wallpaper1.jpg'),
+(89, 5, 'app/public/images/gallery/thor-wallpaper2.jpg', 'app/public/images/gallery/resized/thor-wallpaper2.jpg');
 
 -- --------------------------------------------------------
 
@@ -113,7 +111,8 @@ ALTER TABLE `dieux`
 -- Index pour la table `gallery`
 --
 ALTER TABLE `gallery`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `god` (`god`);
 
 --
 -- Index pour la table `user`
@@ -129,19 +128,29 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `dieux`
 --
 ALTER TABLE `dieux`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT pour la table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD CONSTRAINT `gallery_ibfk_1` FOREIGN KEY (`god`) REFERENCES `dieux` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,5 +1,5 @@
 
-document.getElementById('result');addEventListener('keyup', function searchbar(){
+function searchbar(){
 
     let search = document.getElementById('search').value;
     let img = document.createElement('img');
@@ -12,7 +12,6 @@ document.getElementById('result');addEventListener('keyup', function searchbar()
             data: 'search=' + encodeURIComponent(search),
             success: function(data){
                 let result = document.getElementById("result"); // div with the future data
-                console.log(JSON.parse(data));
                 let god = JSON.parse(data);
                 
                 if(data != ""){
@@ -45,9 +44,11 @@ document.getElementById('result');addEventListener('keyup', function searchbar()
             }
         })
     }
-})
+}
 
+let contact = document.forms['contact'];
 
+if(contact){
 //slack
 $("#submit").click(function () {
     let name = $("#name").val();
@@ -71,8 +72,23 @@ $("#submit").click(function () {
             console.log(response)
     }).fail(function (error) {
             //when it fail
-            console.log(error)
+            console.error(error)
     });
 
 });
+
+//contact form
+
+    document.forms['contact'].addEventListener('submit', function (e){
+        let inputs = this;
+    
+        for(let i =0; i < inputs.length; i++){
+            console.log(inputs[i]);
+            console.log(i);
+        }
+        
+        e.preventDefault();
+    })
+}
+
 

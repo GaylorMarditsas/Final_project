@@ -2,14 +2,14 @@
 
 ?>
 <main>
-    <form class="contact-form center" action="" method="post">
+    <form class="contact-form center" action="index.php?action=contact" method="post" name="contact">
         <div class="form-group lato">
             <label for="nom">Nom</label>
-            <input type="text" name="nom" id="name">
+            <input type="text" name="nom" id="name" required>
         </div>
         <div class="form-group lato">
             <label for="email">Mail</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" required>
         </div>
         <div class="form-group lato">
             <label for="message">Message</label>

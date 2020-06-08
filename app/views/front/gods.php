@@ -14,14 +14,6 @@
     </div>
     <section class="gods-description lato">
 
-           
-
-        <!-- modele de la div en dessous-->
-   
-   
-   
-        
-
                                                                             <!--affichage classique-->
         <?php while($god = $gods->fetch()) : ?>
 

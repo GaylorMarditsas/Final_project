@@ -1,13 +1,13 @@
 <?php 
-$gods = $createImage->viewBack();;
-$error= "Le format du fichier n'est pas accepté";
+$gods = $createImage->viewBack();
+
 ?>
 
 <main>
     <h1 class="admin-title lato">Ajouter des images</h1>
     <section class="godback">
 
-        <form class="backform lato" enctype="multipart/form-data" action="" method="post" name="create">
+        <form class="backform lato" enctype="multipart/form-data" action="indexBack.php?action=createImage" method="post" name="create">
             <div>
             <select  name="name">
             <?php while($god = $gods->fetch()) : ?>
@@ -19,7 +19,6 @@ $error= "Le format du fichier n'est pas accepté";
                 <label for="image">Image</label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
                 <input type="file"  name="image">
-                <span><?php if(isset($error) && !empty($_FILES)){echo $error;}?></span>
             </div>
             <div>
                 <button type="submit" name="submit">Valider</button>

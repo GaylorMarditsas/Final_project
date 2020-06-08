@@ -121,19 +121,17 @@ class BackManager extends Manager
         
     $path = "app/public/images/gallery/" . $source['name'];
     $ext = pathinfo($source['name'], PATHINFO_EXTENSION);
-    var_dump($source);
     $max_size = 400;
     //get the data of the size
     // [0]=>width    [1]=>height
     $imageSize = getimagesize($path);
-    var_dump($imageSize);
     $width = $imageSize[0];
     $height = $imageSize[1];
     if ($width >= $height && $type != "height") {
 
         
         if ($max_size >= $width) {
-            return 'no_need_to_resize';
+            return 'Pas besoin de redimensionner !';
         }
         // new dimension from the width
         $new_width = $max_size;
@@ -143,7 +141,7 @@ class BackManager extends Manager
   
         
         if ($max_size >= $height) {
-            return 'no_need_to_resize';
+            return 'Pas besoin de redimensionner !';
         }
         // new dimension from the height
         $new_height = $max_size;
@@ -179,8 +177,6 @@ class BackManager extends Manager
         move_uploaded_file($source['tmp_name'],"app/public/images/gallery/resized/" . $source['name']);
     }
     //save in the database
-    
-    
     header("Location: indexBack.php?action=gallery");
     }
     //for delete image from the gallery
@@ -190,7 +186,7 @@ class BackManager extends Manager
         //connexion à la bdd
         $bdd = $this->dbConnect();
         //requête pour supprimer l'image dans le dossier 
-        $image = $bdd->prepare("SELECT image FROM gallery WHERE `gallery`.`id` = :id");
+        $image = $bdd->prepare("SELECT image, resized_image FROM gallery WHERE `gallery`.`id` = :id");
         $image->execute([':id'=>$id]);
         $image = $image->fetch();
 
@@ -199,6 +195,7 @@ class BackManager extends Manager
             if ($req->execute([':id'=>$id])) {
                 //supprime le dieu et l'image dans le dossier
                 unlink($image['image']);
+                unlink($image['resized_image']);
                 header("Location: indexBack.php?action=gallery");   
             }
     }

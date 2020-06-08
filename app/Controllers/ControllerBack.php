@@ -102,10 +102,10 @@ class ControllerBack
         $createImage = new \projet\models\BackManager();
         $createImage->viewBack();
 
-        $addGallery = new \projet\Controllers\ControllerBack();
-        $addGallery->addGallery();
+        $errors = new \projet\Controllers\ControllerBack();
+        $errors->addGallery();
         $title = "Ajouter des images";
-
+        $errors= [];
         require 'app/views/back/layout/head.php';
         require 'app/views/back/layout/header.php';
         require 'app/views/back/galleryCreate.php';
@@ -134,21 +134,23 @@ class ControllerBack
             $content=htmlentities($_POST['content']);
             $image= "app/public/images/" . strtolower($img['name']);
 
-            $finfo = finfo_open(FILEINFO_MIME_TYPE);
-            $finfo = finfo_file($finfo, $img['tmp_name']);
+            if(!empty($_FILES['image'])){
+                $finfo = finfo_open(FILEINFO_MIME_TYPE);
+                $finfo = finfo_file($finfo, $img['tmp_name']);
+            }
+            
             //i don't know if finfo_close() is really necessary but whith it i've got an error (parameters need to be resource but string are given)
 
             if ($finfo === 'image/png' || $finfo === 'image/jpeg') {
                 $creategod = new \projet\models\BackManager();
                 $creategod->create($img, $name, $description, $content, $image);
             } elseif ($finfo === false) {
-                $error = "Le format n'est pas détecté";
-                echo $error;
-            } else {
-                $error = "Le format n'est pas jpeg ou png";
-                echo $error;
-            }
+                $errors[] = "Le format n'est pas détecté";
                
+            }else {
+                $errors[] = "Le format n'est pas jpeg ou png";
+            }
+               return $errors;
             
         }
     }
@@ -171,11 +173,9 @@ class ControllerBack
                 $updateImg = new \projet\models\BackManager();
                 $updateImg->updateImg($img, $name, $description, $content, $image);
             } elseif ($finfo === false) {
-                $error = "Le format n'est pas détecté";
-                echo $error;
+                $errors[] = "Le format n'est pas détecté";
             } else {
-                $error = "Le format n'est pas jpeg ou png";
-                echo $error;
+                $errors[] = "Le format n'est pas jpeg ou png";
             }
         } elseif (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image'])
             && empty($_FILES['image']['name'])) {
@@ -187,6 +187,7 @@ class ControllerBack
             $updategod = new \projet\models\BackManager();
             $updategod->update($name, $description, $content);
         }
+        return $errors;
     }
 
     //add pictures to the gallery
@@ -194,10 +195,9 @@ class ControllerBack
     {
         if (isset($_POST['name'], $_FILES['image'])) {
             $source = $_FILES['image'];
-            $name =$_POST['name'];
+            $name =htmlentities($_POST['name']);
             $image_path = "app/public/images/gallery/" . strtolower($source['name']);
             $resized_path = "app/public/images/gallery/resized/" . strtolower($source['name']);
-
 
                 $finfo = finfo_open(FILEINFO_MIME_TYPE);
                 $finfo = finfo_file($finfo, $source['tmp_name']);
@@ -209,13 +209,13 @@ class ControllerBack
                     $resizeImg = new \projet\models\BackManager();
                     $resizeImg->resizeImage($source, $resized_path, $name);
                 } elseif ($finfo === false) {
-                    $error = "Le format n'est pas détecté";
-                    echo $error;
-                } else {
-                    $error = "Le format n'est pas jpeg ou png";
-                    echo $error;
-                }
+                    $errors[] = "Le format n'est pas détecté";
 
+                } else {
+                    $errors[] = "Le format n'est pas jpeg ou png";
+                    
+                }
+                return $errors;
         }
     }
 }
