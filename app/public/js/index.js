@@ -104,10 +104,46 @@ document.forms['contact'].addEventListener('submit', function (e){
             msgError.innerHTML = "<span>" + erreur + "</span>";
         }else{
             msgError.innerHTML = "";
-            slackMsg();
             alert("Votre message à été envoyé !")
+            slackMsg();
         }
     })
 }
 
+let godCreate = document.forms['create-god'];
+
+if(godCreate){
+    godCreate.addEventListener('submit', function (e){
+
+        let msgError = document.getElementById('erreur');
+        let erreur;
+
+        let ext = ['jpg','jpeg','png'];
+        let image = this['image'].value;
+        image = image.split('.');
+
+    
+            if(ext.includes(image[1])){
+                
+                console.log("ok")
+            }else{
+                erreur = "Le format de votre image n'est pas pris en charge";
+            }
+        
+        //champs vide
+        for(let i = 0 ;i < this.length; i++){
+            if(this[i].value == ""){
+                erreur = "Tous les champs sont obligatoire";
+            }
+        }
+
+        if(erreur){
+            msgError.innerHTML = "<span>" + erreur + "</span>";
+            e.preventDefault();
+        }else{
+            msgError.innerHTML = "";
+        }
+        
+    })
+}
 

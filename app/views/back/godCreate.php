@@ -5,7 +5,7 @@ $error= "Votre fichier n'est pas une image";?>
     <h1 class="admin-title lato">Créer un Dieu</h1>
     <section class="godback">
 
-        <form class="backform lato" enctype="multipart/form-data" action="" method="post" name="create">
+        <form class="backform lato" enctype="multipart/form-data" action="" method="post" name="create-god">
             <div>
                 <label for="name">Nom</label>
                 <input type="text" name="name">
@@ -24,10 +24,12 @@ $error= "Votre fichier n'est pas une image";?>
                 <input type="file" name="image">
                 <span><?php if(isset($error) && !empty($_FILES)){echo $error;}?></span>
             </div>
+            <div id="erreur"></div>
             <div>
-                <button type="submit" name="submit">Valider</button>
+                <button type="submit" name="submit" value="Valider">Valider</button>
             </div>
         </form>
     </section>
 </main>
+<script src="app/public/js/index.js"></script>
 </body>
