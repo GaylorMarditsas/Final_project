@@ -15,7 +15,7 @@ $galleryBack = $galleryBack->galleryBack();
                 <img class="table-image" src="<?= $gallery['resized_image'] ?>">
                 <h3 class="lato"><?= $gallery['name'] ?></h3>
             </div>
-            <a href="indexBack.php?action=deleteImage&id=<?= $gallery['id'] ?>">Supprimer</a>
+            <a onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')" href="indexBack.php?action=deleteImage&id=<?= $gallery['id'] ?>">Supprimer</a>
         </li>
         <?php endwhile ?>
     </ul>

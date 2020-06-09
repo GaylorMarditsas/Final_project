@@ -46,11 +46,11 @@ function searchbar(){
     }
 }
 
-let contact = document.forms['contact'];
+const CONTACT = document.forms['contact'];
 
-if(contact){
+if(CONTACT){
 //slack
-$("#submit").click(function () {
+function slackMsg() {
     let name = $("#name").val();
     let email = $("#email").val();
     let message = $("#message").val();
@@ -75,19 +75,38 @@ $("#submit").click(function () {
             console.error(error)
     });
 
-});
+};
 
 //contact form
-
-    document.forms['contact'].addEventListener('submit', function (e){
-        let inputs = this;
+const EMAILVALID = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const NAMEVALID = /^([a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})?$/;
     
-        for(let i =0; i < inputs.length; i++){
-            console.log(inputs[i]);
-            console.log(i);
+
+document.forms['contact'].addEventListener('submit', function (e){
+
+        let email = document.getElementById('email').value;
+        let name = document.getElementById('name').value;
+
+        //erreur
+        let erreur;
+        let msgError = document.getElementById('erreur');
+
+        if(EMAILVALID.test(email) === false){
+            erreur = "Entrez une adresse email valide !";
+            e.preventDefault();
         }
-        
-        e.preventDefault();
+        if(NAMEVALID.test(name) === false){
+            erreur = "Entrez un nom valide !";
+            e.preventDefault();
+            
+        }
+        if(erreur){
+            msgError.innerHTML = "<span>" + erreur + "</span>";
+        }else{
+            msgError.innerHTML = "";
+            slackMsg();
+            alert("Votre message à été envoyé !")
+        }
     })
 }
 

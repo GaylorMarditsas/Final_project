@@ -2,7 +2,7 @@
 
 ?>
 <main>
-    <form class="contact-form center" action="index.php?action=contact" method="post" name="contact">
+    <form class="contact-form center" action="/sites/projet" method="post" name="contact">
         <div class="form-group lato">
             <label for="nom">Nom</label>
             <input type="text" name="nom" id="name" required>
@@ -15,6 +15,7 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" id="" cols="30" rows="10"></textarea>
         </div>
+            <div id="erreur"></div>
             <button id="submit" type="submit">Envoyer</button>
     </form>
 </main>
