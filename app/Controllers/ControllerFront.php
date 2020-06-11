@@ -13,6 +13,7 @@ class ControllerFront
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
         require 'app/views/front/home.php';
+        require 'app/views/front/layout/footer.php';
 
     }
     function contactFront(){
@@ -23,6 +24,7 @@ class ControllerFront
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
         require 'app/views/front/contact.php';
+        require 'app/views/front/layout/footer.php';
     }
     function godsFront(){
 
@@ -37,6 +39,7 @@ class ControllerFront
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
         require 'app/views/front/gods.php';
+        require 'app/views/front/layout/footer.php';
     }
     function godFront(){
 
@@ -48,6 +51,7 @@ class ControllerFront
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
         require 'app/views/front/god.php';
+        require 'app/views/front/layout/footer.php';
     }
     function galleryFront(){
 
@@ -60,6 +64,7 @@ class ControllerFront
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
         require 'app/views/front/gallery.php';
+        require 'app/views/front/layout/footer.php';
     }
     public function searchFront()
     {

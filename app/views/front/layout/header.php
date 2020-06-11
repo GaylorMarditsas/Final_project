@@ -1,8 +1,9 @@
+<!-- HEADER -->
 <header>
     <nav class="navigation lato">
         <div class="navigation-center">
             <a href="/sites/projet">
-                <!-- Created with Inkscape (http://www.inkscape.org/) -->
+                <!-- LOGO SVG -->
                 <svg class="logo"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -112,6 +113,7 @@
 </svg>
 
             </a>
+            <!-- NAVIGATION LINKS -->
             <ul>
                 <li><a href="/sites/projet">Accueil</a></li>
                 <li><a href="index.php?action=gods">Dieux</a></li>

@@ -6,7 +6,8 @@ $gods = $homeFront->viewFront();
 
 <main>
     <section class="presentation">
-        <div class="presentation-container center">
+        <!-- Présentation globale sur la mythologie nordique-->
+        <article class="presentation-container center">
             <h1>La mythologie nordique</h1>
             <p>La mythologie nordique est l'ensemble des mythes provenant d'Europe du Nord (plus particulièrement de la
                 Scandinavie et de l'Islande) à la base du système religieux polythéiste pratiqué dans ces régions au
@@ -15,8 +16,9 @@ $gods = $homeFront->viewFront();
                 dont d'autres variantes sont la mythologie grecque ou encore la mythologie iranienne, et qui a donné
                 lieu à de nombreuses spéculations pseudo-historiques. Comme les autres, la mythologie nordique met en
                 scène un nombre important de divinités, de créatures fabuleuses et de héros.</p>
-        </div>
-        <div class="presentation-container center">
+        </article>
+        <!-- Présentation des Vanes -->
+        <article class="presentation-container center">
             <h2>Les Vanes</h2>
             <p>Les <span class="strong">Vanes</span>, ou Vanir sont un des trois groupes de divinités de la mythologie
                 nordique ; les deux autres étant les <span class="strong">Ases</span> et les <span
@@ -39,11 +41,12 @@ $gods = $homeFront->viewFront();
                 et envoyèrent sa tête à Ásgard. Par la suite, les <span class="strong">Vanes</span> sont reconnus comme
                 étant un sous-groupe des
                 <span class="strong">Ases</span>.</p>
-        </div>
-
-        <div class="presentation-container center">
+        </article>
+        <!-- Présentation des Ases -->
+        <article class="presentation-container center">
             <h2>Les Ases</h2>
-            <p>Dans la mythologie nordique, les <span class="strong">Ases</span>, du vieil islandais Æsir, ásafólk, ása ættir, forment le groupe de
+            <p>Dans la mythologie nordique, les <span class="strong">Ases</span>, du vieil islandais Æsir, ásafólk, ása
+                ættir, forment le groupe de
                 dieux principaux, associés ou apparentés à Odin, et habitant la cité d'Ásgard. Ils coexistent avec
                 deux autres groupes de divinités : les <span class="strong">Vanes</span> et les <span
                     class="strong">Dises</span>. Les <span class="strong">Ases</span> sont souvent mentionnés sous le
@@ -52,23 +55,19 @@ $gods = $homeFront->viewFront();
                 Cette famille, qui comprend de très nombreuses divinités, est représentée par la Rune-Dieu As. À
                 l'inverse des dieux grecs, les dieux d'Asgard sont mortels et peuvent ressentir la douleur physiquement
                 et psychologiquement.</p>
-        </div>
-
-        <div class="presentation-container center">
+        </article>
+        <!-- Présentation des Dises -->
+        <article class="presentation-container center">
             <h2>Les Dises</h2>
-            <p>Les <span
-                    class="strong">Dises</span> (vieux norrois : dísir ; au singulier : dís) forment, dans la mythologie nordique, un ensemble
+            <p>Les <span class="strong">Dises</span> (vieux norrois : dísir ; au singulier : dís) forment, dans la
+                mythologie nordique, un ensemble
                 de divinités féminines, comparables aux Nornes, sur lesquelles peu de choses sont connues, à l'exception
                 qu'elles sont associées à la mort et la déchéance. Elles coexistent avec deux autres groupes de
-                divinités, qui sont les <span class="strong">Ases</span> et les <span class="strong">Vanes</span>. Les Valkyries sont des divinités mineures appelées "les <span
-                    class="strong">Dises</span>
+                divinités, qui sont les <span class="strong">Ases</span> et les <span class="strong">Vanes</span>. Les
+                Valkyries sont des divinités mineures appelées "les <span class="strong">Dises</span>
                 qui servaient Odin".</p>
-        </div>
-
-    </section>   
+        </article>
+    </section>
 </main>
-<footer>
-
-</footer>
 <script src="app/public/js/index.js"></script>
 </body>

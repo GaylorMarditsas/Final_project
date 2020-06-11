@@ -1,7 +1,5 @@
-<?php 
-
-?>
 <main>
+<!-- FORMULAIRE DE CONTACT -->
     <form class="contact-form center" action="/sites/projet" method="post" name="contact">
         <div class="form-group lato">
             <label for="nom">Nom</label>

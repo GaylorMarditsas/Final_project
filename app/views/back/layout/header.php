@@ -1,8 +1,9 @@
+<!-- HEADER -->
 <header>
     <nav class="navigation lato">
         <div class="navigation-center">
             <a href="indexBack.php?action=admin">
-                <!-- Created with Inkscape (http://www.inkscape.org/) -->
+                <!-- LOGO SVG -->
                 <svg class="logo" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
                     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
                     xmlns="http://www.w3.org/2000/svg"
@@ -53,6 +54,7 @@
                     </g>
                 </svg>
             </a>
+            <!-- NAVIGATION lINKS -->
             <ul>
                 <li><a href="indexBack.php?action=admin">Dieux</a></li>
                 <li><a href="indexBack.php?action=gallery">Galerie</a></li>

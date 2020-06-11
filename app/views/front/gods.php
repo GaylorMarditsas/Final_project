@@ -1,8 +1,8 @@
-
 <?php
     $gods = $godsFront->viewFront();   
 ?>
 <main>
+    <!-- BARRE DE RECHERCHE -->
     <div class="search-gods lato">
         <form action="" method="get">
             <label for="search">Rechercher : </label>
@@ -10,13 +10,12 @@
         </form>
     </div>
     <div id="result" class="lato gods center">
-    
+
     </div>
     <section class="gods-description lato">
 
-                                                                            <!--affichage classique-->
         <?php while($god = $gods->fetch()) : ?>
-
+        <!-- AFFICHAGE DES DIFFERENTS DIEUX -->
         <div class="gods center">
             <a href="index.php?action=god&id=<?= $god['id'] ?>">
                 <img src="<?= $god['image'] ?>" alt="<?= $god['name'] ?>">
@@ -29,15 +28,11 @@
             </div>
         </div>
 
-        <?php
-        endwhile;
-        ?>
+        <?php endwhile;?>
 
     </section>
 </main>
-<script
-  src="https://code.jquery.com/jquery-3.5.0.min.js"
-  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script src="app/public/js/index.js"></script>
 </body>
