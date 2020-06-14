@@ -28,6 +28,10 @@ try{
         }
         else if($_GET['action'] == 'god'){
             $controllerFront->godFront();
+        }else if($_GET['action'] == 'mentions'){
+            $controllerFront->mentionsLegales();
+        }else if($_GET['action'] == 'cgu'){
+            $controllerFront->cgu();
         }
 
     } else{

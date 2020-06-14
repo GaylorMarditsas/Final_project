@@ -76,4 +76,21 @@ class ControllerFront
             $search->search($name);
         }
     }
+    public function mentionsLegales(){
+
+        $title = "Mentions Légales";
+        require 'app/views/front/layout/head.php';
+        require 'app/views/front/layout/header.php';
+        require 'app/views/front/mentionsLegales.php';
+        require 'app/views/front/layout/footer.php';
+    }
+    public function cgu(){
+
+        $title = "Conditions générales d'utilisation";
+        
+        require 'app/views/front/layout/head.php';
+        require 'app/views/front/layout/header.php';
+        require 'app/views/front/cgu.php';
+        require 'app/views/front/layout/footer.php';
+    }
 }
