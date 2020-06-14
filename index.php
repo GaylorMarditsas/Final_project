@@ -13,31 +13,36 @@ if(file_exists(__DIR__ . '/.env')){
 try{
     $controllerFront = new \projet\Controllers\ControllerFront(); //objet controller
 
-    if (isset($_GET['action'])){
-        if($_GET['action'] == 'contact'){
+    if(isset($_GET['action'])){
+    
+        switch ($_GET['action']) {
+          case 'contact':
             $controllerFront->contactFront();
-        }
-        else if($_GET['action'] == 'gods'){
+            break;
+          case 'gods':
             $controllerFront->godsFront();
-        }
-        else if($_GET['action'] == 'search'){
+            break;
+          case 'search':
             $controllerFront->searchFront();
-        }
-        else if($_GET['action'] == 'gallery'){
+            break;
+        case 'gallery':
             $controllerFront->galleryFront();
-        }
-        else if($_GET['action'] == 'god'){
+            break;
+        case 'god':
             $controllerFront->godFront();
-        }else if($_GET['action'] == 'mentions'){
+            break;
+        case 'mentions':
             $controllerFront->mentionsLegales();
-        }else if($_GET['action'] == 'cgu'){
+            break;
+        case 'cgu':
             $controllerFront->cgu();
+            break; 
         }
-
-    } else{
+    }else{
         $controllerFront->home();
-        
     }
+        
+    
 
 } catch (Exeption $e){
    
