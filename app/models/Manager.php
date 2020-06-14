@@ -10,13 +10,13 @@ class Manager
     {
         try {
 
-            $host= "eu-cdbr-west-03.cleardb.net";
-            $name = getenv('DB_DATABASE');
-            $username = getenv('DB_USERNAME');
-            $password = getenv('DB_PASSWORD');
+            $host= $_ENV['DB_HOST'];
+            $name = $_ENV['DB_DATABASE'];
+            $username = $_ENV['DB_USERNAME'];
+            $password = $_ENV['DB_PASSWORD'];
             
-            $dsn= 'mysql:host='. $host .';dbname=heroku_024ddffa1494702;charset=utf8';
-            $bdd =new \PDO($dsn, 'bbaf9fef34d201', '0713b139');
+            $dsn= 'mysql:host='. $host .';dbname='. $name .';charset=utf8';
+            $bdd =new \PDO($dsn, $username, $password);
    
             return $bdd;
         } catch (Exeption $e) {
@@ -24,6 +24,3 @@ class Manager
         }
     }
 }
-//DB_USERNAME = bbaf9fef34d201
-//DB_PASSWORD = 0713b139
-//DB_HOST = eu-cdbr-west-03.cleardb.net

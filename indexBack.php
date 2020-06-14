@@ -4,6 +4,11 @@ session_start();
 //autoload.php generé avec composer
 require_once __DIR__  . '/vendor/autoload.php';
 
+if(file_exists(__DIR__ . '/.env')){
+    $dotenv = \Dotenv\Dotenv::createimmutable(__DIR__);
+    $dotenv->load();
+}
+
 try{
     $controllerBack = new \projet\Controllers\ControllerBack(); //objet controller
 
