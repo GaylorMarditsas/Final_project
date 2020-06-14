@@ -1,38 +1,51 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
-h1, p, a{
+
+h1,
+p,
+a {
     margin: 0;
     text-decoration: none;
 }
+
 .lato {
     font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
-.center{
+
+.center {
     width: 1200px;
     margin: 0 auto;
 }
+
 /* HEADER */
-.navigation{
-    background: #2980b9;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #2c3e50, #2980b9);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.navigation {
+    background: #2980b9;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #2c3e50, #2980b9);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #2c3e50, #2980b9);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-.title{
+
+.title {
     display: flex;
     flex-direction: row;
     align-items: center;
     position: relative;
 }
+
 .title p {
     font-size: 1.5rem;
 }
-.logo{
+
+.logo {
     width: 200px;
     height: 150px;
 }
+
 .navigation-center {
     width: 1200px;
     margin: 0 auto;
@@ -40,37 +53,45 @@ background: linear-gradient(to bottom, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, 
     justify-content: space-between;
     align-items: center;
 }
+
 .navigation-center a {
     text-decoration: none;
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     color: #fff;
 }
-.navigation-center a:hover{
+
+.navigation-center a:hover {
     text-decoration: underline;
 }
+
 .navigation-center ul {
     list-style-type: none;
     display: flex;
 }
+
 .navigation-center ul li {
- margin-right: 20px;
-}
-/* FIN HEADER */
-/* CONTENU home.php */
-.presentation{
-    background-color: #fff;
-    padding: 70px;
-    
+    margin-right: 20px;
 }
 
-.presentation-container{
+/* FIN HEADER */
+/* CONTENU home.php */
+.presentation {
+    background-color: #fff;
+    padding: 70px;
+
+}
+
+.presentation-container {
     text-align: center;
 }
-.presentation-container h1, .presentation-container h2 {
+
+.presentation-container h1,
+.presentation-container h2 {
     font-size: 2rem;
     padding: 20px 0;
-    color: rgba(82, 80, 80,1);
+    color: rgba(82, 80, 80, 1);
 }
+
 .presentation-container p {
     padding: 15px 0;
     font-family: 'Lato', Arial, sans-serif;
@@ -78,12 +99,42 @@ background: linear-gradient(to bottom, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, 
     font-size: 1.3rem;
     line-height: 1.5;
 }
-.strong{
+
+.strong {
     font-weight: bolder;
 }
+
 /* FIN CONTENU home.php */
+/* CONTENU footer.php */
+footer {
+    background: #2980b9;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #2980b9, #2c3e50);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #2980b9, #2c3e50);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+footer ul li {
+    margin-right: 15px;
+}
+
+footer ul li a {
+    color: white;
+}
+
+/* FIN CONTENU footer.php */
 /* CONTENU gods.php*/
-.search-gods{
+.search-gods {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -91,42 +142,49 @@ background: linear-gradient(to bottom, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, 
     margin: 50px auto 0 auto;
 }
 
-.gods-description{
+.gods-description {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     background-color: #fff;
     padding-top: 80px;
-    
+
 }
+
 .gods {
     display: flex;
     width: 48%;
 }
-.gods div p{
+
+.gods div p {
     font-size: 1.1rem;
     margin-top: 25px;
     overflow: auto;
     height: 180px;
 }
-.gods h2{
+
+.gods h2 {
     font-weight: 400;
     font-size: 1.7rem;
     color: #2980b9;
     margin-top: 0;
 }
-.gods h2:hover{
+
+.gods h2:hover {
     color: #000;
 }
-.gods-description img{
+
+.gods-description img {
     width: 250px;
     margin-bottom: 100px;
 }
-.gods div{
+
+.gods div {
     display: flex;
     flex-direction: column;
     margin-left: 50px;
 }
+
 /* FIN CONTENU gods.php */
 /* CONTENU god.php */
 .god-container {
@@ -134,50 +192,58 @@ background: linear-gradient(to bottom, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, 
     flex-direction: column;
     align-items: center;
     margin: 20px 0;
-    
+
 }
-.god-container div{
+
+.god-container div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.god-container div h1{
+
+.god-container div h1 {
     margin: 10px 0;
 }
-.god-container  img{
+
+.god-container img {
     width: 30%;
-    
+
 }
+
 /* FIN CONTENU god.php */
 /* CONTENU gallery.php*/
-.gallery{
+.gallery {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-items: center;   
+    align-items: center;
 }
-.gallery-container{
-display: flex;
-justify-content: center;
- width: 400px;
- margin-top:20px;
- position: relative;
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    margin: 20px 0;
+    position: relative;
 }
-.overlay h3{
+
+.overlay h3 {
     color: #fff;
     font-weight: 300;
 }
+
 /* hover*/
-.overlay{
+.overlay {
     width: 400px;
     position: absolute;
     bottom: 0;
     text-align: center;
     background-color: rgba(80, 80, 80, 0.75);
     opacity: 0;
-    
+
 }
-.gallery-container:hover>.overlay{
+
+.gallery-container:hover>.overlay {
     transition: 0.4s;
     opacity: 1;
     -webkit-transition: 0.4s;
@@ -185,6 +251,7 @@ justify-content: center;
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
 }
+
 /* FIN CONTENU gallery.php */
 /* CONTENU contact.php */
 .contact {
@@ -192,27 +259,29 @@ justify-content: center;
     height: 90%;
     position: relative;
 }
+
 .contact-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #2980b9;
-    background: -webkit-linear-gradient(to bottom,#2980b9, #2c3e50);
-    background: linear-gradient(to bottom,#2980b9, #2c3e50);
+    background: -webkit-linear-gradient(to bottom, #2980b9, #2c3e50);
+    background: linear-gradient(to bottom, #2980b9, #2c3e50);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
     width: 800px;
     padding: 80px 20px;
 }
-.contact-form button{
+
+.contact-form button {
     margin: 15px 0;
-    font-family: 'Lato',Arial, sans-serif;
+    font-family: 'Lato', Arial, sans-serif;
     font-size: 0.9rem;
     font-weight: bold;
     letter-spacing: 1px;
@@ -221,7 +290,8 @@ justify-content: center;
     border: 1px solid #fff;
     color: #2c3e50;
 }
-.contact-form button:hover{
+
+.contact-form button:hover {
     margin: 15px 0;
     font-size: 0.9rem;
     font-weight: bold;
@@ -231,44 +301,66 @@ justify-content: center;
     color: #fff;
     border: 1px solid #fff;
 }
-.form-group{
+
+.form-group {
     display: flex;
     flex-direction: column;
     width: 80%;
     color: #fff;
 }
+
 .form-group label {
     text-align: center;
     margin: 10px 0;
 }
-.form-group input, .form-group textarea{
+
+.form-group input,
+.form-group textarea {
     border: 1px solid #fff;
     padding: 3px;
 }
+
 /* FIN CONTENU contact.php */
 /* erreur */
 #erreur {
     color: red;
 }
+
 /* CONTENU mentionLegales.php */
-.mentions{
+.mentions {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-size: 1.2rem;
     margin-top: 20px;
     height: 100%;
     overflow: hidden;
 }
-.mentions-title{
+
+.mentions-title,
+.cgu-title {
     text-align: center;
     margin: 20px;
-    color: rgba(82, 80, 80,1);
+    color: rgba(82, 80, 80, 1);
 }
-.mentions p {
-    color: rgba(82, 80, 80,1);
+
+.mentions p,
+.cgu p,
+.cgu h3 {
+    color: rgba(82, 80, 80, 1);
 }
+
 /* FIN CONTENU mentionLegales.php */
+/* CONTENU cgu.php */
+.cgu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
 /*
 /
 /
@@ -278,41 +370,48 @@ BACK OFFICE
 /
 */
 /* CONTENU login.php */
-.login{
+.login {
     background-color: #2c3e50;
     height: 100%;
 }
-.login-container{
+
+.login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    
+
+
 }
-.login-container h1{
+
+.login-container h1 {
     color: #fff;
     font-weight: 300;
 }
-.login-container button{
+
+.login-container button {
     border: 1px solid #fff;
     padding: 10px;
     color: #2c3e50;
     font-weight: 600;
 }
-.login-container button:hover{
+
+.login-container button:hover {
     background-color: #2c3e50;
     color: #fff;
 }
-.login-container button a{
+
+.login-container button a {
     text-decoration: none;
     color: #2c3e50;
-    
+
 }
-.login-container button a:hover{
+
+.login-container button a:hover {
     color: #fff;
-    
+
 }
+
 .login-container form {
     height: 300px;
     width: 25%;
@@ -328,56 +427,65 @@ BACK OFFICE
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-.login-group{
+
+.login-group {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .login-group input {
     margin-top: 10px;
     padding: 3px;
-    
+
 }
+
 /* FIN CONTENU login.php */
 /* CONTENU home.php*/
-.table-image{
-    width:100px;
+.table-image {
+    width: 100px;
     height: 100px;
 }
-.admin-title{
+
+.admin-title {
     text-align: center;
     background-color: #2980b9;
-    color:#fff;
+    color: #fff;
     font-weight: 400;
 }
-.anchor-center{
+
+.anchor-center {
     text-align: center;
     background-color: #2980b9;
     padding: 10px 0;
 }
+
 .anchor-center a {
     color: #fff;
     font-size: 1.2rem;
     border: 1px solid #fff;
     padding: 5px;
 }
+
 .anchor-center a:hover {
     color: #2980b9;
     background-color: #fff;
     border: 1px solid #fff;
 }
+
 /* FIN CONTENU home.php*/
 /* CONTENU godCreate.php/godUpdate.php/galleryCreate.php */
-.godback{
+.godback {
     background: #2980b9;
-    background: -webkit-linear-gradient(to bottom,#2980b9, #2c3e50);
-    background: linear-gradient(to bottom,#2980b9, #2c3e50);
+    background: -webkit-linear-gradient(to bottom, #2980b9, #2c3e50);
+    background: linear-gradient(to bottom, #2980b9, #2c3e50);
     height: 80%;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.backform{
+
+.backform {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -385,51 +493,60 @@ BACK OFFICE
     border: 1px solid white;
     height: 600px;
     width: 600px;
-    
+
 }
+
 .backform div {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 5px 0;
 }
-.backform div textarea{
+
+.backform div textarea {
     width: 400px;
 }
-.backform div button{
+
+.backform div button {
     border: 1px solid #fff;
     padding: 10px;
     background-color: #fff;
     color: #2980b9;
 }
-.backform div button:hover{
+
+.backform div button:hover {
     border: 1px solid #fff;
     padding: 10px;
     background-color: #2980b9;
     color: #fff;
 }
-.backform label{
+
+.backform label {
     vertical-align: top;
     color: #fff;
 }
+
 /* FIN CONTENU godCreate.php/godUpdate.php/galleryCreate.php */
 /* CONTENU galleryBack.php*/
-.galleryBack{
+.galleryBack {
     margin-top: 20px;
     display: flex;
     flex-flow: row wrap;
     width: 80%;
 }
-.galleryBack li{
+
+.galleryBack li {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
     width: 10%;
     border: 2px solid white;
 }
-.galleryBack li div{
+
+.galleryBack li div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 /* FIN CONTENU galleryBack.php*/
