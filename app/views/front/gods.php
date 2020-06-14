@@ -13,9 +13,8 @@
 
     </div>
     <section class="gods-description lato">
-
-        <?php while($god = $gods->fetch()) : ?>
         <!-- AFFICHAGE DES DIFFERENTS DIEUX -->
+        <?php while($god = $gods->fetch()) : ?>
         <div class="gods center">
             <a href="index.php?action=god&id=<?= $god['id'] ?>">
                 <img src="<?= $god['image'] ?>" alt="<?= $god['name'] ?>">
