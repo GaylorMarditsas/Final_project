@@ -5,6 +5,9 @@ session_start();
 //autoload.php generé avec composer
 require_once __DIR__  . '/vendor/autoload.php';
 
+// $dotenv = new Dotenv\Dotenv(__DIR__);
+// $dotenv->load();
+
 try{
     $controllerFront = new \projet\Controllers\ControllerFront(); //objet controller
 
