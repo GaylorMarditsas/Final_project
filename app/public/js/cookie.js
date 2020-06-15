@@ -15,7 +15,7 @@ function cookie() {
     });
 
     //verification que la valeur est bien présente dans localStorage
-    if (localStorage.getItem("AcceptCookie")) {
-        cookiebar.style.display = 'none';
+    if (!localStorage.getItem("AcceptCookie")) {
+        cookiebar.style.display = 'flex';
     }
 }
