@@ -46,7 +46,7 @@ Ces instructions vont vous permettre d'obtenir une copie du projet sur votre mac
 
 ### Installation
 
-Téléchargez le projet via "[github](https://github.com/GaylorMarditsas/projet.git)" au format zip, ou cloner le directement depuis un bash "git clone [github](https://github.com/GaylorMarditsas/projet.git)".
+Téléchargez le projet via "[github](https://github.com/GaylorMarditsas/projet.git)" au format zip, ou cloner le directement depuis un bash "git clone https://github.com/GaylorMarditsas/projet.git".
 En ce qui concerne la base de données, vous pourrez la trouver dans le dossier "app/SQL/projet.sql". Ensuite, vous pourrez l'importer dans phpMyAdmin ou tout autre gestionnaire de base de données.
 Le diagramme sql, se trouve dans le même dossier que le dump sql.
 
