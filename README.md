@@ -1,14 +1,5 @@
 # North-god
 
-
-## Version
-
-1.0
-
-## Auteur
-
-Gaylor Marditsas
-
 ## Description
 
 Ceci est un projet de fin de formation afin d'acquérir le dîplome de Developpeur Web.
@@ -57,5 +48,14 @@ Vous pouvez naviguer dans le projet en l'ouvrant avec visual studio code par exe
 
 Afin de lancer le projet en local une fois celui-ci téléchargé, lancez tout d'abord phpMyAdmin.
 Ensuite ouvrez notre navigateur internet et tapez dans la barre d'adresse "localhost/projet".
+
+
+## Version
+
+1.0
+
+## Auteur
+
+Gaylor Marditsas
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/ef9541aec3829be150ec/maintainability)](https://codeclimate.com/github/GaylorMarditsas/Final_project/maintainability)
