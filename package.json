@@ -1,8 +1,12 @@
 {
   "name": "projet",
   "version": "1.0.0",
-  "description": "[![Maintainability](https://api.codeclimate.com/v1/badges/ef9541aec3829be150ec/maintainability)](https://codeclimate.com/github/GaylorMarditsas/Final_project/maintainability)",
+  "description": "Ceci est un projet de fin de formation afin d'acquérir le dîplome de Developpeur Web.",
   "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/GaylorMarditsas/Final_project/issues"
   },
-  "homepage": "https://github.com/GaylorMarditsas/Final_project#readme",
-  "devDependencies": {
-    "dotenv": "^8.2.0"
-  }
+  "homepage": "https://github.com/GaylorMarditsas/Final_project#readme"
 }

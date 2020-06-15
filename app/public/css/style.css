@@ -74,6 +74,28 @@ a {
 }
 
 /* FIN HEADER */
+/* BARRE DE COOKIE */
+.cookie{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #020f1880;
+    padding: 5px 0;
+}
+.cookie p {
+    color: white;
+}
+#hideCookie{
+    border: none;
+    margin-left: 10px;
+    background-color: #2980b9;
+    padding: 5px;
+    color: white;
+}
+#hideCookie:hover{
+    background-color: white;
+    color: #2980b9;
+}
 /* CONTENU home.php */
 .presentation {
     background-color: #fff;
