@@ -9,6 +9,7 @@ class ControllerFront
         $homeFront = new \projet\models\FrontManager();
         $homeFront->viewFront();
         $title = "Home";
+        $description="Présentation sur la mythologie nordique.";
 
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
@@ -20,6 +21,7 @@ class ControllerFront
 
         
         $title = "Contact";
+        $description="Contactez-moi !";
 
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
@@ -35,6 +37,7 @@ class ControllerFront
         $searchFront->searchFront();
 
         $title = "Dieux";
+        $description="Liste des différents dieux tels que : Odin, Loki, Heimdall, Freya et plus encore !";
 
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
@@ -47,6 +50,7 @@ class ControllerFront
         $godFront->readFront('$id'); 
 
         $title = "Dieu";
+        $description="Tous les détails de ton dieu préféré.";
 
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
@@ -59,7 +63,9 @@ class ControllerFront
         $galleryFront->viewGallery();
         $godsFront = new \projet\models\FrontManager();
         $godsFront->viewFront();
+
         $title = "Galerie";
+        $description="Galerie d'images des différents dieux de la mythologie nordique.";
 
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
@@ -79,6 +85,7 @@ class ControllerFront
     public function mentionsLegales(){
 
         $title = "Mentions Légales";
+        $description="Vous retrouverez ici les mentions légales";
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
         require 'app/views/front/mentionsLegales.php';
@@ -87,6 +94,7 @@ class ControllerFront
     public function cgu(){
 
         $title = "Conditions générales d'utilisation";
+        $description="Vous retrouverez ice les Conditions générales d'utilisation";
         
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
