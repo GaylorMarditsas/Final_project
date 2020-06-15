@@ -3,6 +3,7 @@ namespace projet\models;
 
 class FrontManager extends Manager
 {
+    //vue globale
     public function viewFront()
     {
         $bdd = $this->dbConnect();
@@ -12,7 +13,7 @@ class FrontManager extends Manager
         return $req;
     }
 
-    //view for the gallery
+    //vue pour la galerie
     public function viewGallery(){
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('SELECT * FROM dieux INNER JOIN gallery ON dieux.id = gallery.god');
@@ -20,7 +21,7 @@ class FrontManager extends Manager
         
         return $req;
     }
-        //for read a god
+        //Pour récuperer l'id du dieu
     public function readFront($id){
             $bdd = $this->dbConnect();
             $req = $bdd->prepare("SELECT * FROM dieux WHERE id ='$id' OR name='$id'");
@@ -32,7 +33,7 @@ class FrontManager extends Manager
             
         }
 
-        //searchbar for match a god
+        //barre de recherche pour matcher un dieu présent en bdd
         public function search($name){
             $bdd = $this->dbConnect();
             $req = $bdd->prepare("SELECT id, name, description, image FROM Dieux WHERE name LIKE :name");

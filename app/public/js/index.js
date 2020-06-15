@@ -14,7 +14,7 @@ function searchbar() {
                 let god = JSON.parse(data);
 
                 if (data != "") {
-                    result.innerHTML = ""; //make the div empty
+                    result.innerHTML = ""; //reset de la div
                     //lien
                     let a = document.createElement('a');
                     a.setAttribute('href', 'index.php?action=god&id=' + god[0]["id"]);
@@ -24,17 +24,17 @@ function searchbar() {
                     img.setAttributeNode(src);
                     a.appendChild(img);
                     result.appendChild(a);
-                    //div for name and descritpion
+                    //div pour le nom et la description
                     let div = document.createElement('div');
                     result.appendChild(div);
-                    //name of the god
+                    //Nom du dieu
                     let h2 = document.createElement('h2');
-                    h2.setAttribute('class', 'name'); // add class to the h2
+                    h2.setAttribute('class', 'name'); // Ajout de la classe au h2
                     let name = document.createTextNode(god[0]["name"]);
-                    h2.appendChild(name); // add the name to the h2
+                    h2.appendChild(name); // Ajout du nom dans le h2
                     a.appendChild(h2);
                     div.appendChild(a);
-                    // description of the god
+                    // description du dieu
                     let p = document.createElement('p');
                     let description = document.createTextNode(god[0]['description']);
                     p.appendChild(description);
@@ -69,15 +69,15 @@ if (CONTACT) {
             },
             dataType: 'text',
         }).done(function (response) {
-            //when it's done
+            //Si c'est ok
             console.log(response)
         }).fail(function (error) {
-            //when it fail
+            //Si c'est pas ok
             console.error(error)
         });
 
     };
-
+    // Plusieurs duplications ci-dessous, refactorisation prévues
     //contact form
     const EMAILVALID = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const NAMEVALID = /^([a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})?$/;
@@ -112,10 +112,10 @@ if (CONTACT) {
 }
 
 
-let godCreate = document.forms['create-god'];
+const GODCREATE = document.forms['create-god'];
 
-if (godCreate) {
-    godCreate.addEventListener('submit', function (e) {
+if (GODCREATE) {
+    GODCREATE.addEventListener('submit', function (e) {
 
         let msgError = document.getElementById('erreur');
         let erreur;
@@ -124,7 +124,7 @@ if (godCreate) {
         let image = this['image'].value;
         image = image.split('.');
 
-
+        //récupération de l'extension de l'image
         if (ext.includes(image.pop()) != true) {
             erreur = "Le format de votre image n'est pas pris en charge";
             console.log(ext.includes(image.pop()))
@@ -136,7 +136,7 @@ if (godCreate) {
                 erreur = "Tous les champs sont obligatoire";
             }
         }
-
+        //affichage de l'erreur
         if (erreur) {
             msgError.innerHTML = "<span>" + erreur + "</span>";
             e.preventDefault();
@@ -146,10 +146,10 @@ if (godCreate) {
 
     })
 }
-let godUpdate = document.forms['update-god'];
+const GODUPDATE = document.forms['update-god'];
 
-if (godUpdate) {
-    godUpdate.addEventListener('submit', function (e) {
+if (GODUPDATE) {
+    GODUPDATE.addEventListener('submit', function (e) {
 
         let msgError = document.getElementById('erreur');
         let erreur;
@@ -177,10 +177,10 @@ if (godUpdate) {
 
     })
 }
-let galleryCreate = document.forms['create-gallery'];
+const GALLERYCREATE = document.forms['create-gallery'];
 
-if (galleryCreate) {
-    galleryCreate.addEventListener('submit', function (e) {
+if (GALLERYCREATE) {
+    GALLERYCREATE.addEventListener('submit', function (e) {
 
         let msgError = document.getElementById('erreur');
         let erreur;

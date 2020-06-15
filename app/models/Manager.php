@@ -5,7 +5,7 @@ namespace projet\models;
 
 class Manager
 {
-    //database connexion
+    //connexion à la base de donnée
     protected function dbConnect()
     {
         try {

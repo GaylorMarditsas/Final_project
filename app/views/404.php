@@ -5,7 +5,7 @@
         <p>
             Il semble qu'il y ai eu un problème
         </p>
-        <a href="index.php">Retour à l'accueil</a>
+        <a title="Accueil" href="index.php">Retour à l'accueil</a>
     </section>
 </main>
 </body>

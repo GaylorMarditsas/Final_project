@@ -3,7 +3,6 @@ $gods = $homeFront->viewFront();
 
 ?>
 
-
 <main>
     <section class="presentation">
         <!-- Présentation globale sur la mythologie nordique-->

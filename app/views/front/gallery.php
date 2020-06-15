@@ -8,8 +8,8 @@ $galleryFront = $galleryFront->viewGallery();
         <?php while($gallery = $galleryFront->fetch()) : ?>
 
         <div class="gallery-container">
-            <a data-fancybox="gallery" href="<?= $gallery['image'] ?>">
-                <img class="image" src="<?= $gallery['resized_image'] ?>">
+            <a title="<?= $gallery['name'] ?>" data-fancybox="gallery" href="<?= $gallery['image'] ?>">
+                <img class="image" src="<?= $gallery['resized_image'] ?>" alt="<?= $gallery['name'] ?>">
             </a>
             <div class="overlay">
                 <h3 class="lato"><?= $gallery['name']; ?></h3>

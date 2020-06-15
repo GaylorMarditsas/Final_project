@@ -9,7 +9,6 @@ $god = $godFront->readFront($_GET['id']);
             <img src="<?= $god['image'] ?>" alt="<?= $god['name'] ?>">
             <div class="lato">
                 <h1><?= $god['name'] ?></h1>
-
                 <p><?= $god['content'] ?></p>
             </div>
             <div>

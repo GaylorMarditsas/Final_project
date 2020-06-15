@@ -1,7 +1,5 @@
 <?php
 $god = $homeBack->read($_GET['id']);
-
-
 ?>
 
 <main>

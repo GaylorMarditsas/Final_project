@@ -56,9 +56,9 @@
             </a>
             <!-- NAVIGATION lINKS -->
             <ul>
-                <li><a href="indexBack.php?action=admin">Dieux</a></li>
-                <li><a href="indexBack.php?action=gallery">Galerie</a></li>
-                <li><a href="indexBack.php?action=logout">Déconnexion</a></li>
+                <li><a href="indexBack.php?action=admin" title="Dieux">Dieux</a></li>
+                <li><a href="indexBack.php?action=gallery" title="Galerie">Galerie</a></li>
+                <li><a href="indexBack.php?action=logout" title="Déconnexion">Déconnexion</a></li>
             </ul>
         </div>
     </nav>

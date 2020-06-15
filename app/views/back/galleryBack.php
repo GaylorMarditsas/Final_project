@@ -12,10 +12,10 @@ $galleryBack = $galleryBack->galleryBack();
         <?php while($gallery = $galleryBack->fetch()) : ?>
         <li>
             <div>
-                <img class="table-image" src="<?= $gallery['resized_image'] ?>">
+                <img class="table-image" src="<?= $gallery['resized_image'] ?>" alt="<?= $gallery['name'] ?>">
                 <h3 class="lato"><?= $gallery['name'] ?></h3>
             </div>
-            <a onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')"
+            <a title="Supprimer" onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')"
                 href="indexBack.php?action=deleteImage&id=<?= $gallery['id'] ?>">Supprimer</a>
         </li>
         <?php endwhile ?>

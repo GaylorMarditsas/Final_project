@@ -16,11 +16,11 @@
         <!-- AFFICHAGE DES DIFFERENTS DIEUX -->
         <?php while($god = $gods->fetch()) : ?>
         <div class="gods center">
-            <a href="index.php?action=god&id=<?= $god['id'] ?>">
+            <a title="<?= $god['name'] ?>" href="index.php?action=god&id=<?= $god['id'] ?>">
                 <img src="<?= $god['image'] ?>" alt="<?= $god['name'] ?>">
             </a>
             <div>
-                <a href="index.php?action=god&id=<?= $god['id'] ?>">
+                <a title="<?= $god['name'] ?>" href="index.php?action=god&id=<?= $god['id'] ?>">
                     <h2 class="name"><?= $god['name'] ?></h2>
                 </a>
                 <p><?= $god['description'] ?></p>

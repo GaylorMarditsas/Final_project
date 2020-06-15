@@ -2,7 +2,7 @@
 <header>
     <nav class="navigation lato">
         <div class="navigation-center">
-            <a href="index.php">
+            <a title="Accueil" href="index.php">
                 <!-- LOGO SVG -->
                 <svg class="logo"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -115,10 +115,10 @@
             </a>
             <!-- NAVIGATION LINKS -->
             <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="index.php?action=gods">Dieux</a></li>
-                <li><a href="index.php?action=gallery">Galerie</a></li>
-                <li><a href="index.php?action=contact">Contact</a></li>
+                <li><a title="Accueil" href="index.php">Accueil</a></li>
+                <li><a title="Dieux" href="index.php?action=gods">Dieux</a></li>
+                <li><a title="Galerie" href="index.php?action=gallery">Galerie</a></li>
+                <li><a title="Contact" href="index.php?action=contact">Contact</a></li>
             </ul>
         </div>
     </nav>

@@ -4,10 +4,12 @@ namespace projet\models;
 
 class BackManager extends Manager
 {
+    //Pour récuperer l'id du dieu
     public function id()
     {
         return htmlspecialchars($_GET['id']);
     }
+    //vue globale
     public function viewBack()
     {
         $bdd = $this->dbConnect();
@@ -16,7 +18,7 @@ class BackManager extends Manager
         
         return $req;
     }
-
+    //vue de la galerie
     public function galleryBack()
     {
         $bdd = $this->dbConnect();
@@ -26,7 +28,7 @@ class BackManager extends Manager
         return $req;
     }
 
-    //for login as admin 
+    //Pour se connecter en tant qu'admin 
     public function login($pseudo, $password)
     {
             $bdd = $this->dbConnect();
@@ -41,7 +43,7 @@ class BackManager extends Manager
             else {}
     }
     ///////////////////////////////////////////             CRUD gods           ///////////////////////////////////////////////////////////////////////////////////
-    //for create a god
+    //Pour créer un dieu
     public function create($img, $name, $description, $content, $image)
     {
         $bdd = $this->dbConnect();
@@ -53,7 +55,7 @@ class BackManager extends Manager
     }
     
 
-    //for read a god
+    //Pour lire un dieu
     public function read($id)
     {
         $bdd = $this->dbConnect();
@@ -65,7 +67,7 @@ class BackManager extends Manager
         } 
     }
 
-    //for update a god
+    //Pour modifier un dieu
     public function updateImg($img, $name, $description, $content, $image)
     {       
         $id=$this->id();
@@ -75,7 +77,7 @@ class BackManager extends Manager
         $req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':image'=> $image, ':id'=>$id]);
         header("Location: indexBack.php?action=admin");
     }
-    //update a god without update his picture
+    //Pour modifier un dieu sans changer son image
     public function update($name, $description, $content)
     {
         $id=$this->id();
@@ -84,7 +86,7 @@ class BackManager extends Manager
         $req->execute([':name'=> $name, ':description'=> $description, ':content'=> $content, ':id'=>$id]);
         header("Location: indexBack.php?action=admin");
     }
-    //for delete a god
+    //Pour supprimer un dieu
     public function delete()
     {
         $id=$this->id();
@@ -98,7 +100,7 @@ class BackManager extends Manager
         $req = $bdd->prepare("DELETE FROM `dieux` WHERE `dieux`.`id` = :id");
                 
             if ($req->execute([':id'=>$id])) {
-                //delete god and the associated picture
+                //Supression du dieu et de l'image associé
                 unlink($image['image']);
                 header("Location: indexBack.php?action=admin");
                 
@@ -106,23 +108,24 @@ class BackManager extends Manager
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //for add image to the gallery
+    //Pour ajouter une image a la galerie
     public function createImage($source, $name, $image_path, $resized_path)
     {
         
-                //save in the database
+                //Enregistrement dans la base de données
                 $bdd = $this->dbConnect();
                 $req = $bdd->prepare("INSERT INTO `gallery` (`id`, `god`, `image`, `resized_image`)VALUES (NULL, :name, :image, :resized)");
                 move_uploaded_file($source['tmp_name'],"app/public/images/gallery/" . $source['name']);
                 $req->execute([':name'=> $name,':image'=> $image_path, ':resized'=>$resized_path]);
-                    //header("Location: indexBack.php?action=gallery");
     }
+    //Voir pour généraliser le redimensionnement d'images pour l'utiliser indépendamment
+    //Pour redimensionner les images si elles sont trop grandes
     public function resizeImage($source, $resized_path, $name){
         
     $path = "app/public/images/gallery/" . $source['name'];
     $ext = pathinfo($source['name'], PATHINFO_EXTENSION);
     $max_size = 400;
-    //get the data of the size
+    //Récuperer la taille de l'image
     // [0]=>width    [1]=>height
     $imageSize = getimagesize($path);
     $width = $imageSize[0];
@@ -133,7 +136,7 @@ class BackManager extends Manager
         if ($max_size >= $width) {
             return 'Pas besoin de redimensionner !';
         }
-        // new dimension from the width
+        // nouvelle dimension depuis la largeur
         $new_width = $max_size;
         $reduction = (($new_width * 100) / $width);
         $new_height = round((($height * $reduction)/100), 0);
@@ -143,7 +146,7 @@ class BackManager extends Manager
         if ($max_size >= $height) {
             return 'Pas besoin de redimensionner !';
         }
-        // new dimension from the height
+        // nouvelle dimension depuis la hauteur
         $new_height = $max_size;
         $reduction = (($new_height * 100) / $height);
         $new_width = round((($width * $reduction)/100), 0);
@@ -161,16 +164,16 @@ class BackManager extends Manager
       $imageFinal = imagecreatetruecolor($new_width, $new_height);
     if (imagecopyresampled($imageFinal, $imageCreate, 0, 0, 0, 0, $new_width, $new_height, $width, $height)) {
   
-        // replace for image in jpg or png
+        // création de la nouvelle image
         switch ($ext) {
           case 'jpg':
           case 'jpeg':
-            $quality = 100; // for jpg||jpeg quality is evaluated from 1 to 100
+            $quality = 100; // Pour les jpg/jpeg la qualité va de 0 à 100
             imagejpeg($imageFinal, $resized_path, $quality);
           break;
   
           case 'png':
-            $quality = 9; //for png quality is evaluated from 1 to 9
+            $quality = 9; //Pour les png la qualité va de 0 à 10
             imagepng($imageFinal, $resized_path, $quality); 
           break;
         }

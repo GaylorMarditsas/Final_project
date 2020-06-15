@@ -3,7 +3,7 @@ namespace projet\Controllers;
 
 class ControllerFront
 {
-
+    //vue de l'accueil
     function home()
     {
         $homeFront = new \projet\models\FrontManager();
@@ -17,6 +17,7 @@ class ControllerFront
         require 'app/views/front/layout/footer.php';
 
     }
+    //vue du contact
     function contactFront(){
 
         
@@ -28,6 +29,7 @@ class ControllerFront
         require 'app/views/front/contact.php';
         require 'app/views/front/layout/footer.php';
     }
+    //vue des dieux
     function godsFront(){
 
         $godsFront = new \projet\models\FrontManager();
@@ -44,6 +46,7 @@ class ControllerFront
         require 'app/views/front/gods.php';
         require 'app/views/front/layout/footer.php';
     }
+    //vue d'un dieu en fonction de son id
     function godFront(){
 
         $godFront = new \projet\models\FrontManager();
@@ -57,6 +60,7 @@ class ControllerFront
         require 'app/views/front/god.php';
         require 'app/views/front/layout/footer.php';
     }
+    //vue de la galerie
     function galleryFront(){
 
         $galleryFront = new \projet\models\FrontManager();
@@ -72,6 +76,7 @@ class ControllerFront
         require 'app/views/front/gallery.php';
         require 'app/views/front/layout/footer.php';
     }
+    //barre de recherche
     public function searchFront()
     {
         if (isset($_GET['search'])) {
@@ -82,6 +87,7 @@ class ControllerFront
             $search->search($name);
         }
     }
+    //vue des mentions légales
     public function mentionsLegales(){
 
         $title = "Mentions Légales";
@@ -91,6 +97,7 @@ class ControllerFront
         require 'app/views/front/mentionsLegales.php';
         require 'app/views/front/layout/footer.php';
     }
+    //vue des CGU
     public function cgu(){
 
         $title = "Conditions générales d'utilisation";
