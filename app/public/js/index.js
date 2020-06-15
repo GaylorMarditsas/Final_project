@@ -1,4 +1,5 @@
 
+
 function searchbar(){
 
     let search = document.getElementById('search').value;
@@ -64,7 +65,7 @@ function slackMsg() {
                     "channel": "bot",
                     "text": "Nom : " + name + '\n' + "Mail : " + email + '\n' +
                             "Message : " + message,
-                    "token": creds.token
+                    "token": process.env.API_KEY
             },
             dataType: 'text',
     }).done(function (response) {

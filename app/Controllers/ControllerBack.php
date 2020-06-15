@@ -105,7 +105,7 @@ class ControllerBack
         $errors = new \projet\Controllers\ControllerBack();
         $errors->addGallery();
         $title = "Ajouter des images";
-        $errors= [];
+
         require 'app/views/back/layout/head.php';
         require 'app/views/back/layout/header.php';
         require 'app/views/back/galleryCreate.php';
@@ -204,10 +204,10 @@ class ControllerBack
                     $resizeImg = new \projet\models\BackManager();
                     $resizeImg->resizeImage($source, $resized_path, $name);
                 } elseif ($finfo === false) {
-                    $errors[] = "Le format n'est pas détecté";
+                    return false;
 
                 } else {
-                    $errors[] = "Le format n'est pas jpeg ou png";
+                    return false;
                     
                 }
                 return $errors;
