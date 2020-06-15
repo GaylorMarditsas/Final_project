@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://north-god.herokuapp.com/</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=gods</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=gallery</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=contact</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=mentions</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=cgu</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=god&amp;id=1</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=god&amp;id=2</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=god&amp;id=3</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=god&amp;id=4</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=god&amp;id=5</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=god&amp;id=6</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=god&amp;id=7</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://north-god.herokuapp.com/index.php?action=god&amp;id=8</loc>
+  <lastmod>2020-06-15T21:31:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
