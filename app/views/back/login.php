@@ -66,7 +66,7 @@
                 </div>
                 <div>
                     <button type="submit" name="submit">Valider</button>
-                    <button><a href="index.php">Retour</a></button>
+                    <a class="button" href="index.php">Retour</a>
                 </div>
                 <?php if(isset($error) && !empty($_POST)){echo $error;} ?>
             </form>

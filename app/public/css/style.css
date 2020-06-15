@@ -148,6 +148,7 @@ footer ul {
 
 footer ul li {
     margin-right: 15px;
+    color: white;
 }
 
 footer ul li a {
@@ -163,7 +164,42 @@ footer ul li a {
     width: 450px;
     margin: 50px auto 0 auto;
 }
+/* searchbar div */
+#result {
+    display: flex;
+    justify-content: center;
+    width: 48%;
+}
+#result div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#result div a{
+    width: fit-content;
+}
+#result div p {
+    font-size: 1.1rem;
+    margin-top: 25px;
+    overflow: auto;
+    height: 180px;
+}
 
+#result h2 {
+    font-weight: 400;
+    font-size: 1.7rem;
+    color: #2980b9;
+    margin-top: 0;
+}
+
+#result h2:hover {
+    color: #000;
+}
+#result img{
+    
+    width: 250px;
+}
 .gods-description {
     display: flex;
     flex-direction: row;
@@ -387,7 +423,42 @@ footer ul li a {
     margin-top: 20px;
     overflow: hidden;
 }
-
+/* FIN CONTENU cgu.php */
+/* CONTENU 404.php */
+.wrong-path{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #2980b9;
+    background: -webkit-linear-gradient(to bottom, #2980b9, #2c3e50);
+    background: linear-gradient(to bottom, #2980b9, #2c3e50);
+}
+.wrong-path h1{
+    font-size: 3rem;
+    font-weight: 300;
+    color: white;
+}
+.wrong-path p{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: white;
+}
+.wrong-path a{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    color: #2980b9;
+}
+.wrong-path a:hover{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2980b9;
+    color: white;
+}
+/* FIN CONTENU 404.php */
 /*
 /
 /
@@ -407,8 +478,6 @@ BACK OFFICE
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-
 }
 
 .login-container h1 {
@@ -419,6 +488,7 @@ BACK OFFICE
 .login-container button {
     border: 1px solid #fff;
     padding: 10px;
+    background-color: lightgray;
     color: #2c3e50;
     font-weight: 600;
 }
@@ -428,15 +498,20 @@ BACK OFFICE
     color: #fff;
 }
 
-.login-container button a {
+.login-container  .button {
     text-decoration: none;
+    border: 1px solid #fff;
+    padding: 10px;
     color: #2c3e50;
+    font-weight: 500;
+    background-color: lightgray;
+
 
 }
 
-.login-container button a:hover {
+.login-container .button:hover {
+    background-color: #2c3e50;
     color: #fff;
-
 }
 
 .login-container form {
@@ -569,6 +644,15 @@ BACK OFFICE
     align-items: center;
     width: 10%;
     border: 2px solid white;
+}
+.galleryBack li  a{
+    color: #2980b9;
+    margin-top: 5px;
+}
+.galleryBack li  a:hover{
+    color: #2980b9;
+    margin-top: 5px;
+    color: rgba(82, 80, 80, 1);
 }
 
 .galleryBack li div {

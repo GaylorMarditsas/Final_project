@@ -13,7 +13,6 @@ $id = $homeBack->read('$id');
             <?php while($god = $gods->fetch()) : ?>
                 <li>
                     <div>
-                        <p><?= $god['id'] ?></p>
                         <h3 class="lato"><?= $god['name'] ?></h3>
                         <img class="table-image" src="<?= $god['image'] ?>">
                     </div>

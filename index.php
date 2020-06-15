@@ -37,6 +37,13 @@ try{
         case 'cgu':
             $controllerFront->cgu();
             break; 
+        default :
+        
+            $title = "404";
+        
+            require 'app/views/front/layout/head.php';
+            require 'app/views/404.php';
+            break;
         }
     }else{
         $controllerFront->home();
