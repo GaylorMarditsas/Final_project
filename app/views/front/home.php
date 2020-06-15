@@ -69,5 +69,6 @@ $gods = $homeFront->viewFront();
         </article>
     </section>
 </main>
+<script src="app/public/js/cookie.js"></script>
 <script src="app/public/js/index.js"></script>
 </body>

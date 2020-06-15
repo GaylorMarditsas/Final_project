@@ -71,4 +71,5 @@
         </div>
     </section>
 </main>
+<script src="app/public/js/cookie.js"></script>
 </body>
