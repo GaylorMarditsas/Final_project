@@ -105,7 +105,7 @@ class ControllerBack
         $errors = new \projet\Controllers\ControllerBack();
         $errors->addGallery();
         $title = "Ajouter des images";
-        $errors= [];
+
         require 'app/views/back/layout/head.php';
         require 'app/views/back/layout/header.php';
         require 'app/views/back/galleryCreate.php';
@@ -139,19 +139,15 @@ class ControllerBack
                 $finfo = finfo_file($finfo, $img['tmp_name']);
             }
             
-            //i don't know if finfo_close() is really necessary but whith it i've got an error (parameters need to be resource but string are given)
 
             if ($finfo === 'image/png' || $finfo === 'image/jpeg') {
                 $creategod = new \projet\models\BackManager();
                 $creategod->create($img, $name, $description, $content, $image);
             } elseif ($finfo === false) {
-                $errors[] = "Le format n'est pas détecté";
-               
+                return false;  
             }else {
-                $errors[] = "Le format n'est pas jpeg ou png";
+                return false;
             }
-               return $errors;
-            
         }
     }
     //update a god
@@ -173,9 +169,9 @@ class ControllerBack
                 $updateImg = new \projet\models\BackManager();
                 $updateImg->updateImg($img, $name, $description, $content, $image);
             } elseif ($finfo === false) {
-                $errors[] = "Le format n'est pas détecté";
+                return false;
             } else {
-                $errors[] = "Le format n'est pas jpeg ou png";
+                return false;
             }
         } elseif (isset($_POST['name'], $_POST['description'], $_POST['content'], $_FILES['image'])
             && empty($_FILES['image']['name'])) {
@@ -187,7 +183,6 @@ class ControllerBack
             $updategod = new \projet\models\BackManager();
             $updategod->update($name, $description, $content);
         }
-        return $errors;
     }
 
     //add pictures to the gallery
@@ -209,10 +204,10 @@ class ControllerBack
                     $resizeImg = new \projet\models\BackManager();
                     $resizeImg->resizeImage($source, $resized_path, $name);
                 } elseif ($finfo === false) {
-                    $errors[] = "Le format n'est pas détecté";
+                    return false;
 
                 } else {
-                    $errors[] = "Le format n'est pas jpeg ou png";
+                    return false;
                     
                 }
                 return $errors;

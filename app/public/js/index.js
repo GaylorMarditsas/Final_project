@@ -1,4 +1,5 @@
 
+
 function searchbar(){
 
     let search = document.getElementById('search').value;
@@ -64,7 +65,7 @@ function slackMsg() {
                     "channel": "bot",
                     "text": "Nom : " + name + '\n' + "Mail : " + email + '\n' +
                             "Message : " + message,
-                    "token": creds.token
+                    "token": process.env.API_KEY
             },
             dataType: 'text',
     }).done(function (response) {
@@ -110,6 +111,7 @@ document.forms['contact'].addEventListener('submit', function (e){
     })
 }
 
+
 let godCreate = document.forms['create-god'];
 
 if(godCreate){
@@ -123,11 +125,9 @@ if(godCreate){
         image = image.split('.');
 
     
-            if(ext.includes(image[1])){
-                
-                console.log("ok")
-            }else{
+            if(ext.includes(image.pop()) != true){
                 erreur = "Le format de votre image n'est pas pris en charge";
+                console.log(ext.includes(image.pop()))
             }
         
         //champs vide
@@ -136,6 +136,67 @@ if(godCreate){
                 erreur = "Tous les champs sont obligatoire";
             }
         }
+
+        if(erreur){
+            msgError.innerHTML = "<span>" + erreur + "</span>";
+            e.preventDefault();
+        }else{
+            msgError.innerHTML = "";
+        }
+        
+    })
+}
+let godUpdate = document.forms['update-god'];
+
+if(godUpdate){
+    godUpdate.addEventListener('submit', function (e){
+
+        let msgError = document.getElementById('erreur');
+        let erreur;
+
+        let ext = ['jpg','jpeg','png'];
+        let image = this['image'].value;
+        image = image.split('.');
+
+    
+            if(this['image'].value != "" && ext.includes(image.pop()) != true){
+                erreur = "Le format de votre image n'est pas pris en charge";
+            }
+        
+        //champs vide
+        if(this['name'].value,this['description'].value,this['content'].value == ""){
+            erreur = 'Les champs "Nom" , "Description" et "Contenu" sont requis !';
+        }
+
+        if(erreur){
+            msgError.innerHTML = "<span>" + erreur + "</span>";
+            e.preventDefault();
+        }else{
+            msgError.innerHTML = "";
+        }
+        
+    })
+}
+let galleryCreate = document.forms['create-gallery'];
+
+if(galleryCreate){
+    galleryCreate.addEventListener('submit', function (e){
+
+        let msgError = document.getElementById('erreur');
+        let erreur;
+
+        let ext = ['jpg','jpeg','png'];
+        let image = this['image'].value;
+        image = image.split('.');
+
+        if(image == ""){
+            erreur = "Veuillez séléctionner une image !"
+        }
+        else if(ext.includes(image.pop()) != true){
+            erreur = "Le format de votre image n'est pas pris en charge";
+        }
+        
+        
 
         if(erreur){
             msgError.innerHTML = "<span>" + erreur + "</span>";

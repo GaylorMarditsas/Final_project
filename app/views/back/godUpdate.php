@@ -7,7 +7,7 @@ $god = $homeBack->read($_GET['id']);
 <main>
 <h1 class="admin-title lato">Modifier un Dieu</h1>
 <section class="godback">
-    <form class="backform lato" enctype="multipart/form-data" action="" method="post">
+    <form class="backform lato" enctype="multipart/form-data" action="" method="post" name="update-god">
         <div>
             <label for="name">Nom</label>
             <input type="text" name="name" value="<?= $god['name']?>">
@@ -24,10 +24,11 @@ $god = $homeBack->read($_GET['id']);
             <label for="image">Image</label>
             <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
             <input type="file" name="image">
-            <span><?php if(isset($error) && !empty($_FILES)){echo $error;}?></span>
         </div>
         <img class="table-image" src="<?= $god['image']?>" alt="<?= $god['name'] ?>">
+        <div id="erreur"></div>
         <div>
+            
             <button type="submit" name="submit">Valider</button>
         </div>
 
@@ -36,4 +37,5 @@ $god = $homeBack->read($_GET['id']);
 </section>
     
 </main>
+<script src="app/public/js/index.js"></script>
 </body>

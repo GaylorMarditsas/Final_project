@@ -1,108 +1,149 @@
-@media only screen and (max-width: 992px) 
-{
-.center{
-    width: 100%;
-}
+@media only screen and (max-width: 992px) {
+    .center {
+        width: 100%;
+    }
+/* CONTENU header.php */
+    .navigation-center {
+        display: flex;
+        justify-content: center;
+        width: 100%;
 
-.navigation-center{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    
-}
+    }
 
-.navigation-center ul{
-    position: fixed;
-    bottom: 0;
-    background: #2980b9;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom,#2980b9, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom,#2980b9, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    width: 100%;
-    justify-content: center;
-    padding: 20px 0;
-    margin: 0;
-    z-index: 10;
+    .navigation-center ul {
+        position: fixed;
+        bottom: 0;
+        background: #2980b9;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #2980b9, #2c3e50);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #2980b9, #2c3e50);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        width: 100%;
+        justify-content: center;
+        padding: 20px 0;
+        margin: 0;
+        z-index: 10;
+    }
+
+    .navigation-center ul li {
+
+        margin: auto;
+    }
+    /* FIN CONTENU header.php */
+    /* CONTENU home.php */
+    .presentation-container {
+        width: 100%;
+
+    }
+
+    .presentation-container p {
+        text-align: left;
+        height: 400px;
+        overflow: auto;
+    }
+    /* FIN CONTENU home.php */
+    /* CONTENU gods.php */
+    .search-gods {
+        width: 100%;
+    }
+
+    .gods-description {
+        margin-bottom: 80px;
+    }
+
+    .gods-description img {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    .gods {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .gods div {
+        margin-left: 20px;
+    }
+
+    .gods div a {
+        text-align: center;
+    }
+
+    .gods div p {
+        margin-right: 20px;
+    }
+    /* FIN CONTENU gods.php */
+    /* CONTENU god.php */
+
+    .god-container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .god {
+        margin-bottom: 80px;
+    }
+    /* FIN CONTENU god.php */
+    /* CONTENU contact.php */
+    .contact{
+        background: white;
+    }
+    .contact-form{
+        background: #2980b9;
+        padding: 15px 0;
+        width: 90%;
+    }
+    .form-group {
+        width: 70%;
+    }
+
+    /* gallery*/
+    .gallery-container {
+        width: 48%;
+    }
+
+    .gallery-container a img{
+        width: 100%;
+    }
+
+    /* login */
+    .login-container h1 {
+        text-align: center;
+    }
+
+    .login-container form {
+        width: 80%;
+    }
+
+    /*back*/
+    .galleryback {
+        display: flex;
+        flex-direction: row;
+        
+        padding-left: 0;
+
+    }
+    .galleryback li {
+        width: 28%;
+        margin-bottom: 5px;
+        padding: 10px;
+    }
+
+    .galleryback:last-child {
+        margin-bottom: 80px;
+    }
+
+/* CONTENU footer.php */
+footer {
+    background: #2980b9;
+    margin-bottom: 50px;
+    padding: 0;
 }
-.navigation-center ul li{
-    
-    margin: auto;
 }
-.presentation-container {
-    width: 100%;
-    
-}
-.presentation-container p{
-    text-align: left;
-    height: 400px;
-    overflow: auto;
-}
-.search-gods{
-    width: 100%;
-}
-.godlist-container{
-    justify-content: space-around;
-}
-.gods-description{
-    margin-bottom: 80px;
-}
-.gods{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px 0;
-}
-.gods div {
-    margin-left: 20px;
-}
-.gods div a{
-    text-align: center;
-}
-.gods div p{
-    margin-right: 20px;
-}
-.gods-description img {
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-.god-container{
-    margin-left:10px;
-    margin-right: 10px;
-}
-.god {
-    margin-bottom: 80px;
-}
-/*contact form*/
-.form-group{
-    width: 70%;
-}
-/* gallery*/
-.gallery-container{
-    width: 48%;
-    
-}
-/* login */
-.login-container h1{
-    text-align: center;
-}
-.login-container form{
-    width: 80%;
-}
-/*back*/
-.galleryback{
-    flex-flow: column;
-    align-items: center;
-    padding-left: 0;
-    
-}
-.galleryback li{
-    width: 100%;
-    border: 5px solid gray;
-    margin-bottom: 5px;
-    padding: 10px;
-}
-.galleryback:last-child{
-    margin-bottom: 80px;
-}
+/* @media only screen and (min-width: 992px)  and (max-width: 1200px) {
 
 
-}
+} */

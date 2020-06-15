@@ -4,48 +4,49 @@ session_start();
 //autoload.php generé avec composer
 require_once __DIR__  . '/vendor/autoload.php';
 
+if(file_exists(__DIR__ . '/.env')){
+    $dotenv = \Dotenv\Dotenv::createimmutable(__DIR__);
+    $dotenv->load();
+}
+
 try{
     $controllerBack = new \projet\Controllers\ControllerBack(); //objet controller
 
-    if (isset($_GET['action']) && isset($_SESSION['admin'])){
-       
-        if($_GET['action'] == 'admin'){
+    if(isset($_GET['action']) && isset($_SESSION['admin'])){
+    
+        switch ($_GET['action']) {
+          case 'admin':
             $controllerBack->homeAdmin();
-        }
-        else if($_GET['action'] == 'update'){
-            
+            break;
+          case 'update':
             if(isset($_GET['id'])){
                 $controllerBack->updateAdmin();
             }else{
                 $controllerBack->homeAdmin();
             }
-            
-        } else if($_GET['action'] == 'create'){
+            break;
+          case 'create':
             $controllerBack->createAdmin();
-        }
-        else if($_GET['action'] == 'delete'){
+            break;
+        case 'delete':
             $controllerBack->deleteAdmin();
-        }
-        else if($_GET['action'] == 'logout'){
+            break;
+        case 'logout':
             $controllerBack->logoutAdmin();
-        }
-        else if($_GET['action'] == 'gallery'){
+            break;
+        case 'gallery':
             $controllerBack->galleryBack();
-        }
-        else if($_GET['action'] == 'createImage'){
+            break;
+        case 'createImage':
             $controllerBack->createGallery();
-        }
-        else if($_GET['action'] == 'deleteImage'){
+            break; 
+        case 'deleteImage':
             $controllerBack->deleteGallery();
+            break; 
         }
-
-    }
-    
-    else{
+    }else{
         $controllerBack->loginAdmin();
-        
     }
-
 } catch (Exeption $e){
    
 }

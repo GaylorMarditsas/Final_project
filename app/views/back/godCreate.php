@@ -1,10 +1,7 @@
-<?php 
-$error= "Votre fichier n'est pas une image";?>
-
 <main>
     <h1 class="admin-title lato">Créer un Dieu</h1>
     <section class="godback">
-
+<!-- GESTION DE L'AJOUT DE DIEU -->
         <form class="backform lato" enctype="multipart/form-data" action="" method="post" name="create-god">
             <div>
                 <label for="name">Nom</label>
@@ -22,7 +19,6 @@ $error= "Votre fichier n'est pas une image";?>
                 <label for="image">Image</label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
                 <input type="file" name="image">
-                <span><?php if(isset($error) && !empty($_FILES)){echo $error;}?></span>
             </div>
             <div id="erreur"></div>
             <div>

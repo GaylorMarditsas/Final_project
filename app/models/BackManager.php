@@ -175,11 +175,10 @@ class BackManager extends Manager
           break;
         }
         move_uploaded_file($source['tmp_name'],"app/public/images/gallery/resized/" . $source['name']);
+        }
+        header("Location: indexBack.php?action=gallery");
     }
-    //save in the database
-    header("Location: indexBack.php?action=gallery");
-    }
-    //for delete image from the gallery
+    //suppression d'image de la galerie
     public function deleteImage()
     {
         $id=$this->id();
