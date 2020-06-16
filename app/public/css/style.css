@@ -29,7 +29,12 @@ a {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-
+.first-title
+{
+    text-align: center;
+    margin: 20px;
+    color: rgba(82, 80, 80, 1);
+}
 .title {
     display: flex;
     flex-direction: row;
@@ -398,13 +403,6 @@ footer ul li a {
     margin-top: 20px;
     height: 100%;
     overflow: hidden;
-}
-
-.mentions-title,
-.cgu-title {
-    text-align: center;
-    margin: 20px;
-    color: rgba(82, 80, 80, 1);
 }
 
 .mentions p,

@@ -3,6 +3,7 @@ $galleryFront = $galleryFront->viewGallery();
 ?>
 
 <main>
+    <h1 class="first-title">Galerie</h1>
     <section class="gallery">
         <!-- GALERIE D'IMAGES -->
         <?php while($gallery = $galleryFront->fetch()) : ?>

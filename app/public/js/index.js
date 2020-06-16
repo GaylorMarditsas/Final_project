@@ -49,8 +49,6 @@ const CONTACT = document.forms['contact'];
 
 if (CONTACT) {
     //slack
-    console.log(creds.key)
-
     function slackMsg() {
         let name = $("#name").val();
         let email = $("#email").val();

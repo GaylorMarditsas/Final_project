@@ -1,6 +1,6 @@
 <main>
     <section class="lato center">
-        <h1 class="cgu-title">Conditions générales d'utilisation</h1>
+        <h1 class="first-title">Conditions générales d'utilisation</h1>
 
         <div class="cgu">
             <p>

@@ -1,6 +1,6 @@
 <main>
     <section class="lato center">
-        <h1 class="mentions-title">Mentions Légales</h1>
+        <h1 class="first-title">Mentions Légales</h1>
 
         <address>
             Ce site est édité par la société Bidon Industry. <br>

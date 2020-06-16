@@ -2,6 +2,7 @@
     $gods = $godsFront->viewFront();   
 ?>
 <main>
+    <h1 class="first-title">Les dieux</h1>
     <!-- BARRE DE RECHERCHE -->
     <div class="search-gods lato">
         <form action="" method="get">

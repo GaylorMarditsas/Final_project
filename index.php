@@ -40,6 +40,7 @@ try{
         default :
         
             $title = "404";
+            $description="erreur 404";
         
             require 'app/views/front/layout/head.php';
             require 'app/views/404.php';
