@@ -7,7 +7,7 @@ class FrontManager extends Manager
     public function viewFront()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT * FROM Dieux');
+        $req = $bdd->prepare('SELECT * FROM Dieux ORDER BY id desc');
         $req->execute();
         
         return $req;
