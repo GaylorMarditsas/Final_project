@@ -40,7 +40,7 @@
     }
 
     .presentation-container p {
-
+        text-align: left;
         height: 400px;
         overflow: auto;
     }
@@ -176,6 +176,7 @@ BACK OFFICE
     .backform {
         height: 100%;
         width: 90%;
+        padding: 0;
     }
     .backform div textarea {
         width: 100%;
