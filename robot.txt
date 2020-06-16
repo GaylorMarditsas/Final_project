@@ -1,4 +1,0 @@
-User-Agent: *
-Disallow: /intranet/
-Allow: /*.css?*
-Sitemap: https://https://north-god.herokuapp.com/sitemap.xml
