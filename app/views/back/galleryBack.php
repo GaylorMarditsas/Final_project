@@ -6,7 +6,7 @@ $galleryBack = $galleryBack->galleryBack();
 <!-- GESTION DE LA GALERIE D'IMAGES -->
     <h1 class="admin-title lato">Administration de la galerie</h1>
     <div class="anchor-center lato">
-        <a href="indexBack.php?action=createImage">Ajouter des images</a>
+        <a href="ajouter-image">Ajouter des images</a>
     </div>
     <ul class="galleryBack center">
         <?php while($gallery = $galleryBack->fetch()) : ?>

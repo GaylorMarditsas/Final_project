@@ -17,7 +17,7 @@ function searchbar() {
                     result.innerHTML = ""; //reset de la div
                     //lien
                     let a = document.createElement('a');
-                    a.setAttribute('href', 'index.php?action=god&id=' + god[0]["id"]);
+                    a.setAttribute('href', 'dieu-' + god[0]["id"]);
                     //image 
                     let src = document.createAttribute("src");
                     src.value = god[0]["image"];

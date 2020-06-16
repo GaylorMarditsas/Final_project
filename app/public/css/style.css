@@ -573,7 +573,7 @@ BACK OFFICE
     background: #2980b9;
     background: -webkit-linear-gradient(to bottom, #2980b9, #2c3e50);
     background: linear-gradient(to bottom, #2980b9, #2c3e50);
-    height: 80%;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
