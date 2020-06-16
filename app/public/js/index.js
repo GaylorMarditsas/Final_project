@@ -55,7 +55,6 @@ if (CONTACT) {
         let message = $("#message").val();
 
 
-
         $.ajax({
             url: 'https://slack.com/api/chat.postMessage',
             type: 'POST',
@@ -64,6 +63,7 @@ if (CONTACT) {
                 "text": "Nom : " + name + '\n' + "Mail : " + email + '\n' +
                     "Message : " + message,
                 "token": creds.token
+                
             },
             dataType: 'text',
         }).done(function (response) {
