@@ -8,12 +8,12 @@ RewriteRule ^galerie$ index.php?action=gallery
 RewriteRule ^contact$ index.php?action=contact
 RewriteRule ^mentions-legales$ index.php?action=mentions
 RewriteRule ^conditions-generales-utilisation$ index.php?action=cgu
-RewriteRule ^dieu-([0-9])$ index.php?action=god&id=$1
+RewriteRule ^dieu-([0-9]+)$ index.php?action=god&id=$1
 RewriteRule ^admin$ indexBack.php
 RewriteRule ^administration$ indexBack.php?action=admin
 RewriteRule ^administration-galerie$ indexBack.php?action=gallery
 RewriteRule ^ajouter-dieu$ indexBack.php?action=create
-RewriteRule ^modifier-dieu-([0-9])$ indexBack.php?action=update&id=$1
+RewriteRule ^modifier-dieu-([0-9]+)$ indexBack.php?action=update&id=$1
 RewriteRule ^ajouter-image$ indexBack.php?action=createImage
 
 
