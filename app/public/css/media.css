@@ -177,7 +177,9 @@ BACK OFFICE
         height: 100%;
         width: 90%;
     }
-
+    .backform div textarea {
+        width: 100%;
+    }
     /* FIN CONTENU godUpdate.php */
     /* CONTENU footer.php */
     footer {

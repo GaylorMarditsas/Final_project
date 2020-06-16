@@ -2,7 +2,9 @@ body {
     margin: 0;
     padding: 0;
 }
-
+main{
+    min-height: 100%;
+}
 h1,
 p,
 a {
@@ -186,8 +188,9 @@ footer ul li a {
     width: fit-content;
 }
 #result div p {
+    text-align: justify;
     font-size: 1.1rem;
-    margin-top: 25px;
+    margin: 25px 10px 0;
     overflow: auto;
     height: 180px;
 }
@@ -252,8 +255,8 @@ footer ul li a {
 /* FIN CONTENU gods.php */
 /* CONTENU god.php */
 .god{
-    height: 90%;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 .god-container {
@@ -324,9 +327,8 @@ footer ul li a {
 /* FIN CONTENU gallery.php */
 /* CONTENU contact.php */
 .contact {
-    width: 100%;
-    height: 90%;
-    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .contact-form {
@@ -336,14 +338,6 @@ footer ul li a {
     background: #2980b9;
     background: -webkit-linear-gradient(to bottom, #2980b9, #2c3e50);
     background: linear-gradient(to bottom, #2980b9, #2c3e50);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
     width: 800px;
     padding: 80px 20px;
 }
@@ -580,7 +574,7 @@ BACK OFFICE
     background: #2980b9;
     background: -webkit-linear-gradient(to bottom, #2980b9, #2c3e50);
     background: linear-gradient(to bottom, #2980b9, #2c3e50);
-    height: 80%;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;

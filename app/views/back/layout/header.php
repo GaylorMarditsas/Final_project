@@ -2,7 +2,7 @@
 <header>
     <nav class="navigation lato">
         <div class="navigation-center">
-            <a href="indexBack.php?action=admin">
+            <a href="administration">
                 <!-- LOGO SVG -->
                 <svg class="logo" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
                     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
@@ -56,8 +56,8 @@
             </a>
             <!-- NAVIGATION lINKS -->
             <ul>
-                <li><a href="indexBack.php?action=admin" title="Dieux">Dieux</a></li>
-                <li><a href="indexBack.php?action=gallery" title="Galerie">Galerie</a></li>
+                <li><a href="administration" title="Dieux">Dieux</a></li>
+                <li><a href="administration-galerie" title="Galerie">Galerie</a></li>
                 <li><a href="indexBack.php?action=logout" title="Déconnexion">Déconnexion</a></li>
             </ul>
         </div>

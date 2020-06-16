@@ -6,7 +6,7 @@ $id = $homeBack->read('$id');
 <!-- ACCUEIL DE L'ADMINISTRATION -->
     <h1 class="admin-title lato">Espace administration</h1>
     <div class="anchor-center lato">
-        <a title="Ajouter un dieu" href="indexBack.php?action=create">Ajouter un Dieu</a>
+        <a title="Ajouter un dieu" href="ajouter-dieu">Ajouter un Dieu</a>
     </div>
     <section>
             <ul class="galleryBack center">
@@ -16,7 +16,7 @@ $id = $homeBack->read('$id');
                         <h3 class="lato"><?= $god['name'] ?></h3>
                         <img class="table-image" src="<?= $god['image'] ?>" alt="<?= $god['name'] ?>">
                     </div>
-                    <a title="Modifier" href="indexBack.php?action=update&id=<?= $god['id']  ?>">Modifier</a>
+                    <a title="Modifier" href="modifier-dieu-<?= $god['id']  ?>">Modifier</a>
                     <a title="Supprimer" onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')"
                             href="indexBack.php?action=delete&id=<?= $god['id'] ?>">Supprimer</a>
                 </li>

@@ -116,9 +116,9 @@
             <!-- NAVIGATION LINKS -->
             <ul>
                 <li><a title="Accueil" href="index.php">Accueil</a></li>
-                <li><a title="Dieux" href="index.php?action=gods">Dieux</a></li>
-                <li><a title="Galerie" href="index.php?action=gallery">Galerie</a></li>
-                <li><a title="Contact" href="index.php?action=contact">Contact</a></li>
+                <li><a title="Dieux" href="dieux">Dieux</a></li>
+                <li><a title="Galerie" href="galerie">Galerie</a></li>
+                <li><a title="Contact" href="contact">Contact</a></li>
             </ul>
         </div>
     </nav>
