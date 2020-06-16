@@ -109,11 +109,12 @@ a {
 }
 
 .presentation-container {
-    text-align: center;
+    text-align: justify;
 }
 
 .presentation-container h1,
 .presentation-container h2 {
+    text-align: center;
     font-size: 2rem;
     padding: 20px 0;
     color: rgba(82, 80, 80, 1);

@@ -40,7 +40,7 @@
     }
 
     .presentation-container p {
-        text-align: left;
+
         height: 400px;
         overflow: auto;
     }
@@ -220,6 +220,9 @@ BACK OFFICE
     /* CONTENU god.php */
     .god-container div p {
         margin: 0 20px;
+    }
+    .god{
+        height: 100%;
     }
     /* FIN CONTENU god.php */
     /* CONTENU gallery.php */
