@@ -2,7 +2,7 @@
     <h1 class="admin-title lato">Créer un Dieu</h1>
     <section class="godback">
 <!-- GESTION DE L'AJOUT DE DIEU -->
-        <form class="backform lato" enctype="multipart/form-data" action="" method="post" name="create-god">
+        <form class="backform lato" enctype="multipart/form-data" action="indexBack.php?action=create" method="post" name="create-god">
             <div>
                 <label for="name">Nom</label>
                 <input type="text" name="name">
