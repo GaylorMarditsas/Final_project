@@ -1,3 +1,4 @@
+<body>
 <!-- HEADER -->
 <header>
     <nav class="navigation lato">
@@ -63,5 +64,3 @@
         </div>
     </nav>
 </header>
-
-<body>

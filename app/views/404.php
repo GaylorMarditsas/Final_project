@@ -8,4 +8,3 @@
         <a title="Accueil" href="index.php">Retour à l'accueil</a>
     </section>
 </main>
-</body>

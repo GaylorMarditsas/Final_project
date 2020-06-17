@@ -13,5 +13,3 @@ $god = $godFront->readFront($_GET['id']);
             <div>
     </section>
 </main>
-<script src="app/public/js/cookie.js"></script>
-</body>

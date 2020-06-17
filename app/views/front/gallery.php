@@ -8,19 +8,14 @@ $galleryFront = $galleryFront->viewGallery();
         <!-- GALERIE D'IMAGES -->
         <?php while($gallery = $galleryFront->fetch()) : ?>
 
-        <div class="gallery-container">
+        <figure class="gallery-container">
             <a title="<?= $gallery['name'] ?>" data-fancybox="gallery" href="<?= $gallery['image'] ?>">
                 <img class="image" src="<?= $gallery['resized_image'] ?>" alt="<?= $gallery['name'] ?>">
             </a>
-            <div class="overlay">
+            <figcaption class="overlay">
                 <h3 class="lato"><?= $gallery['name']; ?></h3>
-            </div>
-        </div>
+            </figcaption>
+        </figure>
         <?php endwhile ?>
     </section>
 </main>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="app/public/js/cookie.js"></script>
-<script src="app/public/js/index.js"></script>
-</body>

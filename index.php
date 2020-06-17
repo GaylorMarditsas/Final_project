@@ -43,7 +43,9 @@ try{
             $description="erreur 404";
         
             require 'app/views/front/layout/head.php';
+            require 'app/views/front/layout/header.php';
             require 'app/views/404.php';
+            require 'app/views/front/layout/footer.php';
             break;
         }
     }else{

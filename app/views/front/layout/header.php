@@ -1,3 +1,4 @@
+<body>
 <!-- HEADER -->
 <header>
     <nav class="navigation lato">
@@ -123,7 +124,6 @@
         </div>
     </nav>
 </header>
-<body>
 <div class="cookie">
 <p>Ce site utilise des cookies, en poursuivant votre navigation, vous en acceptez leurs utilisations</p>
 <button id="hideCookie">OK</button>

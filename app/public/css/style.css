@@ -303,6 +303,9 @@ footer ul li a {
     color: #fff;
     font-weight: 300;
 }
+.gallery-container a{
+    display: flex;
+}
 
 /* hover*/
 .overlay {
