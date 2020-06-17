@@ -3,6 +3,7 @@
     <h1 class="first-title">Contact</h1>
     <section class="contact">
         <!-- FORMULAIRE DE CONTACT -->
+        <!-- the mail is send to my channel slack using  slack api -->
         <form class="contact-form" action="index.php" method="post" name="contact">
             <div class="form-group lato">
                 <label for="nom">Nom</label>

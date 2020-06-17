@@ -33,5 +33,4 @@
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="app/public/css/style.css">
-    <link rel="stylesheet" href="app/public/css/media.css">
 </head>

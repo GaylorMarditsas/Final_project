@@ -47,6 +47,8 @@ function searchbar() {
                 }
             }
         })
+    }else if(search == ""){
+        document.getElementById("result").innerHTML="";
     }
 }
 //verification des formulaires
