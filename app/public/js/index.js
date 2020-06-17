@@ -1,3 +1,4 @@
+//barre de recherche
 function searchbar() {
 
     let search = document.getElementById('search').value;
@@ -10,40 +11,45 @@ function searchbar() {
             url: 'index.php?action=search',
             data: 'search=' + encodeURIComponent(search),
             success: function (data) {
+
                 let result = document.getElementById("result"); // div with the future data
                 let god = JSON.parse(data);
 
                 if (data != "") {
-                    result.innerHTML = ""; //reset de la div
-                    //lien
-                    let a = document.createElement('a');
-                    a.setAttribute('href', 'dieu-' + god[0]["id"]);
-                    //image 
-                    let src = document.createAttribute("src");
-                    src.value = god[0]["image"];
-                    img.setAttributeNode(src);
-                    a.appendChild(img);
-                    result.appendChild(a);
-                    //div pour le nom et la description
-                    let div = document.createElement('div');
-                    result.appendChild(div);
-                    //Nom du dieu
-                    let h2 = document.createElement('h2');
-                    h2.setAttribute('class', 'name'); // Ajout de la classe au h2
-                    let name = document.createTextNode(god[0]["name"]);
-                    h2.appendChild(name); // Ajout du nom dans le h2
-                    a.appendChild(h2);
-                    div.appendChild(a);
-                    // description du dieu
-                    let p = document.createElement('p');
-                    let description = document.createTextNode(god[0]['description']);
-                    p.appendChild(description);
-                    div.appendChild(p);
+                    result.innerHTML = "<div>Aucune correspondance</div>"; //aucun match
+                    if (god[0]["id"] != undefined) {
+                        result.innerHTML = "";
+                        //lien
+                        let a = document.createElement('a');
+                        a.setAttribute('href', 'dieu-' + god[0]["id"]);
+                        //image 
+                        let src = document.createAttribute("src");
+                        src.value = god[0]["image"];
+                        img.setAttributeNode(src);
+                        a.appendChild(img);
+                        result.appendChild(a);
+                        //div pour le nom et la description
+                        let div = document.createElement('div');
+                        result.appendChild(div);
+                        //Nom du dieu
+                        let h2 = document.createElement('h2');
+                        h2.setAttribute('class', 'name'); // Ajout de la classe au h2
+                        let name = document.createTextNode(god[0]["name"]);
+                        h2.appendChild(name); // Ajout du nom dans le h2
+                        a.appendChild(h2);
+                        div.appendChild(a);
+                        // description du dieu
+                        let p = document.createElement('p');
+                        let description = document.createTextNode(god[0]['description']);
+                        p.appendChild(description);
+                        div.appendChild(p);
+                    }
                 }
             }
         })
     }
 }
+//verification des formulaires
 const CONTACT = document.forms['contact'];
 
 if (CONTACT) {
@@ -62,7 +68,7 @@ if (CONTACT) {
                 "text": "Nom : " + name + '\n' + "Mail : " + email + '\n' +
                     "Message : " + message,
                 "token": phpVars.API_KEY
-                
+
             },
             dataType: 'text',
         }).done(function (response) {
