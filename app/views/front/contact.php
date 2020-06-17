@@ -1,3 +1,4 @@
+
 <main>
     <h1 class="first-title">Contact</h1>
     <section class="contact">
@@ -23,6 +24,9 @@
 <script src="https://code.jquery.com/jquery-3.5.0.min.js"
     integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script src="app/public/js/cookie.js"></script>
-<script src="app/public/js/creds.js"></script>
+<script type="text/javascript">
+    let phpVars = {};
+        phpVars["API_KEY"] = "<?= $_ENV["API_KEY"]; ?>";
+</script>
 <script src="app/public/js/index.js"></script>
 </body>

@@ -44,7 +44,6 @@ function searchbar() {
         })
     }
 }
-
 const CONTACT = document.forms['contact'];
 
 if (CONTACT) {
@@ -53,7 +52,7 @@ if (CONTACT) {
         let name = $("#name").val();
         let email = $("#email").val();
         let message = $("#message").val();
-
+        console.log(phpVars);
 
         $.ajax({
             url: 'https://slack.com/api/chat.postMessage',
@@ -62,7 +61,7 @@ if (CONTACT) {
                 "channel": "bot",
                 "text": "Nom : " + name + '\n' + "Mail : " + email + '\n' +
                     "Message : " + message,
-                "token": creds.token
+                "token": phpVars.API_KEY
                 
             },
             dataType: 'text',

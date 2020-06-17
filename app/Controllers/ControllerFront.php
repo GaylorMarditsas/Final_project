@@ -23,7 +23,7 @@ class ControllerFront
         
         $title = "Contact";
         $description="Contactez-moi !";
-
+        // $vars = $_ENV;
         require 'app/views/front/layout/head.php';
         require 'app/views/front/layout/header.php';
         require 'app/views/front/contact.php';
