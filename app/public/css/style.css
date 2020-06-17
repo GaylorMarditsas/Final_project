@@ -62,14 +62,15 @@ a {
     align-items: center;
 }
 
-.navigation-center a {
+.navigation-center ul li a {
     text-decoration: none;
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     color: #fff;
+    padding-bottom: 10px;
 }
 
-.navigation-center a:hover {
-    text-decoration: underline;
+.navigation-center ul li a:hover {
+    border-bottom: 1px solid white;
 }
 
 .navigation-center ul {
