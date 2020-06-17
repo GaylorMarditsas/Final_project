@@ -9,7 +9,7 @@ $id = $homeBack->read('$id');
         <a title="Ajouter un dieu" href="ajouter-dieu">Ajouter un Dieu</a>
     </div>
     <section>
-            <ul class="galleryBack center">
+            <ul class="galleryBack">
             <?php while($god = $gods->fetch()) : ?>
                 <li>
                     <div>

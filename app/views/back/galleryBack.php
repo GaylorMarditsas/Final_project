@@ -8,7 +8,7 @@ $galleryBack = $galleryBack->galleryBack();
     <div class="anchor-center lato">
         <a href="ajouter-image">Ajouter des images</a>
     </div>
-    <ul class="galleryBack center">
+    <ul class="galleryBack">
         <?php while($gallery = $galleryBack->fetch()) : ?>
         <li>
             <div>

@@ -1,6 +1,6 @@
 <main>
     <!-- ACCES A L'ESPACE D'ADMINISTRATION -->
-    <div class="login">
+    <section class="login">
         <div class="login-container lato">
             <a href="index.php">
                 <!-- Created with Inkscape (http://www.inkscape.org/) -->
@@ -71,6 +71,6 @@
                 <?php if(isset($error) && !empty($_POST)){echo $error;} ?>
             </form>
         </div>
-    </div>
+</section>
 </main>
 </body>

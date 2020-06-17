@@ -14,6 +14,7 @@
     .navigation-center ul {
         position: fixed;
         bottom: 0;
+        /* height: 3vh; */
         background: #2980b9;
         /* fallback for old browsers */
         background: -webkit-linear-gradient(to bottom, #2980b9, #2c3e50);
@@ -150,11 +151,13 @@ BACK OFFICE
 /
 /
 */
-    /* CONTENU login.php */
+    /* CONTENU home.php */
     .galleryback {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         padding-left: 0;
+        
 
     }
 
