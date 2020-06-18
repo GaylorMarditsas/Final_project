@@ -15,7 +15,7 @@
             </div>
             <div class="form-group lato">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" id="" cols="30" rows="10"></textarea>
+                <textarea id="message" name="message" cols="30" rows="10"></textarea>
             </div>
             <div class="lato" id="erreur"></div>
             <button class="lato" id="submit" type="submit">Envoyer</button>
