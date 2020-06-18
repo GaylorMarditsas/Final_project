@@ -12,7 +12,7 @@ $galleryBack = $galleryBack->galleryBack();
         <?php while($gallery = $galleryBack->fetch()) : ?>
         <li>
             <div>
-                <img class="table-image" src="<?= $gallery['resized_image'] ?>" alt="<?= $gallery['name'] ?>">
+                <img class="table-image" src="<?= $gallery['image'] ?>" alt="<?= $gallery['name'] ?>">
                 <h3 class="lato"><?= $gallery['name'] ?></h3>
             </div>
             <a title="Supprimer" onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')"

@@ -308,7 +308,10 @@ footer ul li a {
 .gallery-container a{
     display: flex;
 }
-
+.gallery-container a img{
+    max-width: 400px;
+    max-height: 400px;
+}
 /* hover*/
 .overlay {
     width: 400px;

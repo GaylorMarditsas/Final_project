@@ -10,7 +10,7 @@ $galleryFront = $galleryFront->viewGallery();
 
         <figure class="gallery-container">
             <a title="<?= $gallery['name'] ?>" data-fancybox="gallery" href="<?= $gallery['image'] ?>">
-                <img class="image" src="<?= $gallery['resized_image'] ?>" alt="<?= $gallery['name'] ?>">
+                <img src="<?= $gallery['image'] ?>" alt="<?= $gallery['name'] ?>">
             </a>
             <figcaption class="overlay">
                 <h3 class="lato"><?= $gallery['name']; ?></h3>

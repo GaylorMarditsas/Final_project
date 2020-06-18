@@ -210,6 +210,11 @@ class ControllerBack
                 if ($finfo === 'image/png' || $finfo === 'image/jpeg') {
                     $addImg = new \projet\models\BackManager();
                     $addImg->createImage($source, $name, $image_path, $resized_path);
+                    /*
+                    la fonction ci-dessous redimensionne les images mais ne marche pas en prod sur heroku actuellement.
+                    Je n'ai toujours pas trouvé de solutions au problème.
+                    De ce fait dans mes vues j'appelle l'image non redimensionné pour que le site reste complètement utilisable
+                    */
                     // $resizeImg = new \projet\models\BackManager();
                     // $resizeImg->resizeImage($source, $resized_path, $name);
                 } elseif ($finfo === false) {
