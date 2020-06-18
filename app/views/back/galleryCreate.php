@@ -6,7 +6,7 @@ $gods = $createImage->viewBack();
 <!-- GESTION DE L'AJOUT D'IMAGE DANS LA GALERIE -->
     <h1 class="admin-title lato">Ajouter des images</h1>
     <section class="godback">
-        <form class="backform lato" enctype="multipart/form-data" action="indexBack.php?action=createImage" method="post" name="create-gallery">
+        <form class="backform lato" enctype="multipart/form-data" action="" method="post" name="create-gallery">
             <div>
             <select  name="name">
 
@@ -17,7 +17,7 @@ $gods = $createImage->viewBack();
             </select>
             </div>
             <div>
-                <label>Image</label>
+                <label for="image">Image</label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
                 <input type="file"  name="image">
             </div>
