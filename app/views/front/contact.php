@@ -6,7 +6,7 @@
         <!-- the mail is send to my channel slack using  slack api -->
         <form class="contact-form" action="index.php" method="post" name="contact">
             <div class="form-group lato">
-                <label for="nom">Nom</label>
+                <label for="name">Nom</label>
                 <input type="text" name="nom" id="name" required>
             </div>
             <div class="form-group lato">
