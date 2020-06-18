@@ -116,7 +116,6 @@ class BackManager extends Manager
                 $bdd = $this->dbConnect();
                 $req = $bdd->prepare("INSERT INTO `gallery` (`id`, `god`, `image`, `resized_image`)VALUES (NULL, :name, :image, :resized)");
                 move_uploaded_file($source['tmp_name'],"app/public/images/gallery/" . $source['name']);
-                move_uploaded_file($source['tmp_name'],"app/public/images/gallery/resized/" . $source['name']);
                 $req->execute([':name'=> $name,':image'=> $image_path, ':resized'=>$resized_path]);
                 header("Location: indexBack.php?action=gallery");
 
