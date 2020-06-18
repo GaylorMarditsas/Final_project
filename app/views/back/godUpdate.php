@@ -7,19 +7,19 @@ $god = $homeBack->read($_GET['id']);
 <section class="godback">
     <form class="backform lato" enctype="multipart/form-data" action="" method="post" name="update-god">
         <div>
-            <label for="name">Nom</label>
+            <label>Nom</label>
             <input type="text" name="name" value="<?= $god['name']?>">
         </div>
         <div>
-            <label for="description">Description</label>
-            <textarea name="description" id="" cols="30" rows="10"><?= $god['description']?></textarea>
+            <label>Description</label>
+            <textarea name="description" cols="30" rows="10"><?= $god['description']?></textarea>
         </div>
         <div>
-            <label for="content">Contenu</label>
-            <textarea name="content" id="" cols="30" rows="10"><?= $god['content']?></textarea>
+            <label>Contenu</label>
+            <textarea name="content" cols="30" rows="10"><?= $god['content']?></textarea>
         </div>
         <div>
-            <label for="image">Image</label>
+            <label>Image</label>
             <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
             <input type="file" name="image">
         </div>

@@ -17,7 +17,7 @@ $gods = $createImage->viewBack();
             </select>
             </div>
             <div>
-                <label for="image">Image</label>
+                <label>Image</label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
                 <input type="file"  name="image">
             </div>

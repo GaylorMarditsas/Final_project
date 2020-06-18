@@ -57,11 +57,11 @@
             <h1>Connexion à l'administation</h1>
             <form action="" method="post" name="login" id="login">
                 <div class="login-group">
-                    <label for="pseudo">Identifiant</label>
+                    <label>Identifiant</label>
                     <input type="text" name="pseudo" placeholder="identifiant">
                 </div>
                 <div class="login-group">
-                    <label for="password">Mot de passe</label>
+                    <label>Mot de passe</label>
                     <input type="password" name="password" placeholder="*********">
                 </div>
                 <div>
