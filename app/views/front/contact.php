@@ -19,6 +19,7 @@
             </div>
             <div class="lato" id="erreur"></div>
             <button class="lato" id="submit" type="submit">Envoyer</button>
+            </div>
         </form>
     </section>
 </main>
