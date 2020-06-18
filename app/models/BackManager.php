@@ -119,7 +119,7 @@ class BackManager extends Manager
                 $req->execute([':name'=> $name,':image'=> $image_path, ':resized'=>$resized_path]);
 
                     
-    $path = "app/public/images/gallery/" . $source['name'];
+    $path = "./app/public/images/gallery/" . $source['name'];
     $ext = pathinfo($source['name'], PATHINFO_EXTENSION);
     $max_size = 400;
     //Récuperer la taille de l'image
