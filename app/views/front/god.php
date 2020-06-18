@@ -10,6 +10,6 @@ $god = $godFront->readFront($_GET['id']);
                 <h1 class="first-title"><?= $god['name'] ?></h1>
                 <p><?= $god['content'] ?></p>
             </div>
-            <div>
+         </div>
     </section>
 </main>
