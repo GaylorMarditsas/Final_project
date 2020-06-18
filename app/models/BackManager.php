@@ -117,11 +117,8 @@ class BackManager extends Manager
                 $req = $bdd->prepare("INSERT INTO `gallery` (`id`, `god`, `image`, `resized_image`)VALUES (NULL, :name, :image, :resized)");
                 move_uploaded_file($source['tmp_name'],"app/public/images/gallery/" . $source['name']);
                 $req->execute([':name'=> $name,':image'=> $image_path, ':resized'=>$resized_path]);
-    }
-    //Voir pour généraliser le redimensionnement d'images pour l'utiliser indépendamment
-    //Pour redimensionner les images si elles sont trop grandes
-    public function resizeImage($source, $resized_path, $name){
-        
+
+                    
     $path = "app/public/images/gallery/" . $source['name'];
     $ext = pathinfo($source['name'], PATHINFO_EXTENSION);
     $max_size = 400;
@@ -181,6 +178,69 @@ class BackManager extends Manager
         }
         header("Location: indexBack.php?action=gallery");
     }
+    //Voir pour généraliser le redimensionnement d'images pour l'utiliser indépendamment
+    //Pour redimensionner les images si elles sont trop grandes
+    // public function resizeImage($source, $resized_path, $name){
+        
+    // $path = "app/public/images/gallery/" . $source['name'];
+    // $ext = pathinfo($source['name'], PATHINFO_EXTENSION);
+    // $max_size = 400;
+    // //Récuperer la taille de l'image
+    // // [0]=>width    [1]=>height
+    // $imageSize = getimagesize($path);
+    // $width = $imageSize[0];
+    // $height = $imageSize[1];
+    // if ($width >= $height && $type != "height") {
+
+        
+    //     if ($max_size >= $width) {
+    //         return 'Pas besoin de redimensionner !';
+    //     }
+    //     // nouvelle dimension depuis la largeur
+    //     $new_width = $max_size;
+    //     $reduction = (($new_width * 100) / $width);
+    //     $new_height = round((($height * $reduction)/100), 0);
+    // } else {
+  
+        
+    //     if ($max_size >= $height) {
+    //         return 'Pas besoin de redimensionner !';
+    //     }
+    //     // nouvelle dimension depuis la hauteur
+    //     $new_height = $max_size;
+    //     $reduction = (($new_height * 100) / $height);
+    //     $new_width = round((($width * $reduction)/100), 0);
+    // }
+    // switch ($ext) {
+    //     case 'jpg':
+    //     case 'jpeg':
+    //         $imageCreate = imagecreatefromjpeg($path);
+    //     break;
+  
+    //     case 'png':
+    //         $imageCreate = imagecreatefrompng($path);
+    //     break;
+    //   }
+    //   $imageFinal = imagecreatetruecolor($new_width, $new_height);
+    // if (imagecopyresampled($imageFinal, $imageCreate, 0, 0, 0, 0, $new_width, $new_height, $width, $height)) {
+  
+    //     // création de la nouvelle image
+    //     switch ($ext) {
+    //       case 'jpg':
+    //       case 'jpeg':
+    //         $quality = 100; // Pour les jpg/jpeg la qualité va de 0 à 100
+    //         imagejpeg($imageFinal, $resized_path, $quality);
+    //       break;
+  
+    //       case 'png':
+    //         $quality = 9; //Pour les png la qualité va de 0 à 10
+    //         imagepng($imageFinal, $resized_path, $quality); 
+    //       break;
+    //     }
+    //     move_uploaded_file($source['tmp_name'],"app/public/images/gallery/resized/" . $source['name']);
+    //     }
+    //     header("Location: indexBack.php?action=gallery");
+    // }
     //suppression d'image de la galerie
     public function deleteImage()
     {
