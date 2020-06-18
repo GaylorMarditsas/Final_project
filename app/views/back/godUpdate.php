@@ -37,4 +37,4 @@ $god = $homeBack->read($_GET['id']);
 </main>
 <script src="app/public/js/index.js"></script>
 </body>
-</hmtl>
+</html>

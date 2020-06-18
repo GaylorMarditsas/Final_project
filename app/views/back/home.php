@@ -25,4 +25,4 @@ $id = $homeBack->read('$id');
     </section>
 </main>
 </body>
-</hmtl>
+</html>

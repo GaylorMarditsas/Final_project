@@ -9,4 +9,4 @@
     </section>
 </main>
 </body>
-</hmtl>
+</html>
