@@ -210,8 +210,8 @@ class ControllerBack
                 if ($finfo === 'image/png' || $finfo === 'image/jpeg') {
                     $addImg = new \projet\models\BackManager();
                     $addImg->createImage($source, $name, $image_path, $resized_path);
-                    // $resizeImg = new \projet\models\BackManager();
-                    // $resizeImg->resizeImage($source, $resized_path, $name);
+                    $resizeImg = new \projet\models\BackManager();
+                    $resizeImg->resizeImage($source, $resized_path, $name);
                 } elseif ($finfo === false) {
                     return false;
 
