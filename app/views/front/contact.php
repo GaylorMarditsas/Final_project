@@ -7,7 +7,7 @@
         <form class="contact-form" action="index.php" method="post" name="contact">
             <div class="form-group lato">
                 <label for="name">Nom</label>
-                <input type="text" name="nom" id="name" required>
+                <input type="text" name="nom" id="name">
             </div>
             <div class="form-group lato">
                 <label for="email">Mail</label>
